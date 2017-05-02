@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		283BC4121EB8100B00EDC725 /* BigInteger.m in Sources */ = {isa = PBXBuildFile; fileRef = 283BC40C1EB8100B00EDC725 /* BigInteger.m */; };
+		283BC4131EB8100B00EDC725 /* tommath.c in Sources */ = {isa = PBXBuildFile; fileRef = 283BC40F1EB8100B00EDC725 /* tommath.c */; };
+		285E0D3B1EB7611500519314 /* RSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 285E0D3A1EB7611500519314 /* RSA.m */; };
 		289A4E211EB36FB8002804AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 289A4E201EB36FB8002804AB /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +26,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		283BC40B1EB8100B00EDC725 /* BigInteger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigInteger.h; sourceTree = "<group>"; };
+		283BC40C1EB8100B00EDC725 /* BigInteger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigInteger.m; sourceTree = "<group>"; };
+		283BC40D1EB8100B00EDC725 /* tommath_class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tommath_class.h; sourceTree = "<group>"; };
+		283BC40E1EB8100B00EDC725 /* tommath_superclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tommath_superclass.h; sourceTree = "<group>"; };
+		283BC40F1EB8100B00EDC725 /* tommath.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tommath.c; sourceTree = "<group>"; };
+		283BC4101EB8100B00EDC725 /* tommath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tommath.h; sourceTree = "<group>"; };
+		285E0D391EB7611500519314 /* RSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSA.h; sourceTree = "<group>"; };
+		285E0D3A1EB7611500519314 /* RSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSA.m; sourceTree = "<group>"; };
+		285E0D4B1EB7690100519314 /* primes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = primes.txt; sourceTree = "<group>"; };
 		289A4E1D1EB36FB8002804AB /* RSA Console */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "RSA Console"; sourceTree = BUILT_PRODUCTS_DIR; };
 		289A4E201EB36FB8002804AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -38,6 +50,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		285E0D471EB7662200519314 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				285E0D4B1EB7690100519314 /* primes.txt */,
+				283BC40B1EB8100B00EDC725 /* BigInteger.h */,
+				283BC40C1EB8100B00EDC725 /* BigInteger.m */,
+				283BC40D1EB8100B00EDC725 /* tommath_class.h */,
+				283BC40E1EB8100B00EDC725 /* tommath_superclass.h */,
+				283BC40F1EB8100B00EDC725 /* tommath.c */,
+				283BC4101EB8100B00EDC725 /* tommath.h */,
+			);
+			name = Math;
+			sourceTree = "<group>";
+		};
 		289A4E141EB36FB8002804AB = {
 			isa = PBXGroup;
 			children = (
@@ -57,7 +83,10 @@
 		289A4E1F1EB36FB8002804AB /* RSA Console */ = {
 			isa = PBXGroup;
 			children = (
+				285E0D471EB7662200519314 /* Math */,
 				289A4E201EB36FB8002804AB /* main.m */,
+				285E0D391EB7611500519314 /* RSA.h */,
+				285E0D3A1EB7611500519314 /* RSA.m */,
 			);
 			path = "RSA Console";
 			sourceTree = "<group>";
@@ -120,7 +149,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				283BC4131EB8100B00EDC725 /* tommath.c in Sources */,
 				289A4E211EB36FB8002804AB /* main.m in Sources */,
+				283BC4121EB8100B00EDC725 /* BigInteger.m in Sources */,
+				285E0D3B1EB7611500519314 /* RSA.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +251,7 @@
 		289A4E251EB36FB8002804AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DEVELOPMENT_TEAM = 8NZ8K5GNH8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -227,6 +260,7 @@
 		289A4E261EB36FB8002804AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DEVELOPMENT_TEAM = 8NZ8K5GNH8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -251,6 +285,7 @@
 				289A4E261EB36FB8002804AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
