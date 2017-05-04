@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "289A4E1C1EB36FB8002804AB"
-               BuildableName = "RSA Console"
-               BlueprintName = "RSA Console"
-               ReferencedContainer = "container:RSA Console.xcodeproj">
+               BlueprintIdentifier = "286BFE7B1EB9821500B90500"
+               BuildableName = "RSA_test.app"
+               BlueprintName = "RSA_test"
+               ReferencedContainer = "container:RSA_test.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "289A4E1C1EB36FB8002804AB"
-            BuildableName = "RSA Console"
-            BlueprintName = "RSA Console"
-            ReferencedContainer = "container:RSA Console.xcodeproj">
+            BlueprintIdentifier = "286BFE7B1EB9821500B90500"
+            BuildableName = "RSA_test.app"
+            BlueprintName = "RSA_test"
+            ReferencedContainer = "container:RSA_test.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "289A4E1C1EB36FB8002804AB"
-            BuildableName = "RSA Console"
-            BlueprintName = "RSA Console"
-            ReferencedContainer = "container:RSA Console.xcodeproj">
+            BlueprintIdentifier = "286BFE7B1EB9821500B90500"
+            BuildableName = "RSA_test.app"
+            BlueprintName = "RSA_test"
+            ReferencedContainer = "container:RSA_test.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "289A4E1C1EB36FB8002804AB"
-            BuildableName = "RSA Console"
-            BlueprintName = "RSA Console"
-            ReferencedContainer = "container:RSA Console.xcodeproj">
+            BlueprintIdentifier = "286BFE7B1EB9821500B90500"
+            BuildableName = "RSA_test.app"
+            BlueprintName = "RSA_test"
+            ReferencedContainer = "container:RSA_test.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

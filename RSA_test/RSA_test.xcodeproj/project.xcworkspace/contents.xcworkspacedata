@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:RSA Console.xcodeproj">
+      location = "self:RSA_test.xcodeproj">
    </FileRef>
 </Workspace>

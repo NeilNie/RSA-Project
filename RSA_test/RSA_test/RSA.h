@@ -19,4 +19,7 @@
 
 -(BigInteger *)randomPrime;
 
+-(NSMutableArray <NSNumber *>*)intRepresentation:(NSString *)string;
+-(NSString *)stringRepresentation:(NSMutableArray <NSNumber *>*)nums;
+
 @end

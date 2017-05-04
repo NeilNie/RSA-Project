@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>RSA Console.xcscheme</key>
+		<key>RSA_test.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>289A4E1C1EB36FB8002804AB</key>
+		<key>286BFE7B1EB9821500B90500</key>
 		<dict>
 			<key>primary</key>
 			<true/>
