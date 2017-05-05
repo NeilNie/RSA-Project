@@ -16,6 +16,23 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [FIRApp configure];
+    
+    //Check the Username string and display UIViewController
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    UIStoryboard *MainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *StartView = [MainStoryBoard instantiateViewControllerWithIdentifier:@"authviewcontroller"];
+    UIViewController *Viewcontroller = [MainStoryBoard instantiateViewControllerWithIdentifier:@"mainviewcontroller"];
+    
+    if ([[FIRAuth auth] currentUser]) {
+        self.window.rootViewController = Viewcontroller;
+        [self.window makeKeyAndVisible];
+        
+    } else {
+        self.window.rootViewController = StartView;
+        [self.window makeKeyAndVisible];
+    }
     // Override point for customization after application launch.
     return YES;
 }

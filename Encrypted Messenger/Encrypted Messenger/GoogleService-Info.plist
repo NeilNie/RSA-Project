@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>947114542184-ug5f2cg394p7lmm345j196acf6si0gjm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.947114542184-ug5f2cg394p7lmm345j196acf6si0gjm</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBLAKEkUE8qbIOQY5MOf2RUJqXScTiD3HM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>947114542184</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.yongyang.encrypted-messenger</string>
+	<key>PROJECT_ID</key>
+	<string>rsa-messenger-2fc00</string>
+	<key>STORAGE_BUCKET</key>
+	<string>rsa-messenger-2fc00.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:947114542184:ios:df690d9b7024a7c7</string>
+	<key>DATABASE_URL</key>
+	<string>https://rsa-messenger-2fc00.firebaseio.com</string>
+</dict>
+</plist>

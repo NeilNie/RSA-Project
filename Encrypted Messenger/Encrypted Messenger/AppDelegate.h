@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@import FirebaseCore;
+@import FirebaseAuth;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

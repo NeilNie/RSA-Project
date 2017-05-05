@@ -36,23 +36,18 @@
 
 -(NSString *)encryptString:(NSString *)string withPublicKey:(NSString *)key{
     
-    //BigInteger *p = [self randomPrime];
-    //BigInteger *q = [self randomPrime];
-    
-    BigInteger *p = [[BigInteger alloc] initWithString:@"11"];
-    BigInteger *q = [[BigInteger alloc] initWithString:@"13"];
-    
+    BigInteger *p = [self randomPrime];
+    BigInteger *q = [self randomPrime];
+
     BigInteger *n = [p multiply:q];
     BigInteger *phiN = [[p subtract:[[BigInteger alloc] initWithString:@"1"]] multiply:[q subtract:[[BigInteger alloc] initWithString:@"1"]]];
-    //BigInteger *e = [self findeWithPhi:phiN];
-    BigInteger *e = [[BigInteger alloc] initWithString:@"7"];
+    BigInteger *e = [self findeWithPhi:phiN];
     int d = [self modInverse:[e.stringValue intValue] m:[phiN.stringValue intValue]];
     self.privateKey = [[BigInteger alloc] initWithString:[NSString stringWithFormat:@"%i", d]];
     
     //me mod n
     NSMutableArray *nums = [self intRepresentation:string];
-    //BigInteger *m = [[BigInteger alloc] initWithString:[(NSNumber *)[nums firstObject] stringValue]];
-    BigInteger *m = [[BigInteger alloc] initWithString:@"9"];
+    BigInteger *m = [[BigInteger alloc] initWithString:[(NSNumber *)[nums firstObject] stringValue]];
     BigInteger *val = [m pow:e andMod:n];
     NSLog(@"%@",val);
     return nil;
