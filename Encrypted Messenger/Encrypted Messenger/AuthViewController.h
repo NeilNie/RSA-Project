@@ -10,11 +10,13 @@
 #import "MDTextField.h"
 
 @import FirebaseAuth;
+@import FirebaseDatabase;
 
 @interface AuthViewController : UIViewController <MDTextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet MDTextField *username;
 @property (weak, nonatomic) IBOutlet MDTextField *email;
 @property (weak, nonatomic) IBOutlet MDTextField *password;
+@property (strong, nonatomic) FIRDatabaseReference *ref;
 
 @end

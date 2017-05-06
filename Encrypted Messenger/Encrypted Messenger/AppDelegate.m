@@ -29,6 +29,11 @@
         self.window.rootViewController = Viewcontroller;
         [self.window makeKeyAndVisible];
         
+        /*NSError *signOutError;
+        BOOL status = [[FIRAuth auth] signOut:&signOutError];
+        if (!status) {
+            NSLog(@"Error signing out: %@", signOutError);
+        }*/
     } else {
         self.window.rootViewController = StartView;
         [self.window makeKeyAndVisible];

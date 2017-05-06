@@ -7,9 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ConversationTableViewCell.h"
+
+@import FirebaseDatabase;
+@import FirebaseAuth;
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) NSDictionary *currentUser;
+@property (strong, nonatomic) NSMutableArray *conversations;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 

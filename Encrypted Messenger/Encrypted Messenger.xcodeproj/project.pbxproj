@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		286D140B1EBCA0E100602731 /* NewConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 286D140A1EBCA0E100602731 /* NewConversationViewController.m */; };
+		286D140E1EBCABAF00602731 /* ConversationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 286D140D1EBCABAF00602731 /* ConversationTableViewCell.m */; };
+		286D14111EBCABBB00602731 /* MessageBubbleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 286D14101EBCABBB00602731 /* MessageBubbleTableViewCell.m */; };
 		289A4DFF1EB36F6F002804AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 289A4DFE1EB36F6F002804AB /* main.m */; };
 		289A4E021EB36F6F002804AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 289A4E011EB36F6F002804AB /* AppDelegate.m */; };
 		289A4E051EB36F6F002804AB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289A4E041EB36F6F002804AB /* ViewController.m */; };
@@ -75,6 +78,12 @@
 
 /* Begin PBXFileReference section */
 		17A39ACC9F9EBB2130AC9569 /* Pods-Encrypted Messenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Encrypted Messenger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Encrypted Messenger/Pods-Encrypted Messenger.debug.xcconfig"; sourceTree = "<group>"; };
+		286D14091EBCA0E100602731 /* NewConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewConversationViewController.h; sourceTree = "<group>"; };
+		286D140A1EBCA0E100602731 /* NewConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewConversationViewController.m; sourceTree = "<group>"; };
+		286D140C1EBCABAF00602731 /* ConversationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationTableViewCell.h; sourceTree = "<group>"; };
+		286D140D1EBCABAF00602731 /* ConversationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationTableViewCell.m; sourceTree = "<group>"; };
+		286D140F1EBCABBB00602731 /* MessageBubbleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageBubbleTableViewCell.h; sourceTree = "<group>"; };
+		286D14101EBCABBB00602731 /* MessageBubbleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageBubbleTableViewCell.m; sourceTree = "<group>"; };
 		289A4DFA1EB36F6F002804AB /* Encrypted Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Encrypted Messenger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		289A4DFE1EB36F6F002804AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		289A4E001EB36F6F002804AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -204,6 +213,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		286D14121EBCABC300602731 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				286D140C1EBCABAF00602731 /* ConversationTableViewCell.h */,
+				286D140D1EBCABAF00602731 /* ConversationTableViewCell.m */,
+				286D140F1EBCABBB00602731 /* MessageBubbleTableViewCell.h */,
+				286D14101EBCABBB00602731 /* MessageBubbleTableViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		289A4DF11EB36F6F002804AB = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +247,7 @@
 			children = (
 				289A4E001EB36F6F002804AB /* AppDelegate.h */,
 				289A4E011EB36F6F002804AB /* AppDelegate.m */,
+				286D14121EBCABC300602731 /* Views */,
 				289C385C1EBC006500FD8C56 /* ViewControllers */,
 				289C37DC1EBBDD2B00FD8C56 /* MaterialControls */,
 				289C37D71EBBDB7C00FD8C56 /* Media */,
@@ -369,6 +390,8 @@
 				289C37C01EBBD96600FD8C56 /* ChatViewController.m */,
 				289C37C21EBBD96C00FD8C56 /* PreferenceViewController.h */,
 				289C37C31EBBD96C00FD8C56 /* PreferenceViewController.m */,
+				286D14091EBCA0E100602731 /* NewConversationViewController.h */,
+				286D140A1EBCA0E100602731 /* NewConversationViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -531,6 +554,7 @@
 				289C38381EBBDD2B00FD8C56 /* MDCalendarDateHeader.m in Sources */,
 				289C385A1EBBDD2B00FD8C56 /* UIView+MDExtension.m in Sources */,
 				289C38331EBBDD2B00FD8C56 /* MaterialControls.m in Sources */,
+				286D140E1EBCABAF00602731 /* ConversationTableViewCell.m in Sources */,
 				289C38371EBBDD2B00FD8C56 /* MDCalendarCell.m in Sources */,
 				289C38511EBBDD2B00FD8C56 /* MDTextField.m in Sources */,
 				289C384D1EBBDD2B00FD8C56 /* MDSwitch.m in Sources */,
@@ -541,6 +565,7 @@
 				289C38571EBBDD2B00FD8C56 /* NSDateHelper.m in Sources */,
 				289C37BE1EBBD95A00FD8C56 /* AuthViewController.m in Sources */,
 				289C38451EBBDD2B00FD8C56 /* MDRippleLayer.m in Sources */,
+				286D14111EBCABBB00602731 /* MessageBubbleTableViewCell.m in Sources */,
 				289C383B1EBBDD2B00FD8C56 /* MDCalendarYearSelectorViewCell.m in Sources */,
 				289C384A1EBBDD2B00FD8C56 /* MDSnackbar.m in Sources */,
 				289C385B1EBBDD2B00FD8C56 /* UIViewHelper.m in Sources */,
@@ -573,6 +598,7 @@
 				289C38471EBBDD2B00FD8C56 /* MDSliderIcon.m in Sources */,
 				289C383A1EBBDD2B00FD8C56 /* MDCalendarYearSelector.m in Sources */,
 				289C38501EBBDD2B00FD8C56 /* MDTableViewCell.m in Sources */,
+				286D140B1EBCA0E100602731 /* NewConversationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

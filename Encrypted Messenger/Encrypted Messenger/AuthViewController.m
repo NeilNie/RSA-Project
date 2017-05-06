@@ -14,10 +14,6 @@
 
 @implementation AuthViewController
 
--(void)textFieldDidBeginEditing:(MDTextField *)textField{
-    NSLog(@"%i", self.password.secureTextEntry);
-}
-
 #pragma mark - IBActions
 
 -(IBAction)registerUser:(id)sender{
@@ -26,6 +22,11 @@
         if (error) {
             [self showErrorAlert:error];
         }else{
+            NSString *uid = [[[FIRAuth auth] currentUser] uid];
+            [[[self.ref child:@"users"] child:uid] setValue:@{@"username": self.username.text,
+                                                              @"email": self.email.text,
+                                                              @"UUID": uid,
+                                                              @"conversations": [NSMutableArray array]}];
             [self presentMainView];
         }
     }];
@@ -73,7 +74,7 @@
     self.password.highlightColor = [UIColor grayColor];
     self.email.highlightColor = [UIColor grayColor];
     [self.password setSecureTextEntry:YES];
-    self.password.delegate = self;
+    self.ref = [[FIRDatabase database] reference];
     // Do any additional setup after loading the view.
 }
 
