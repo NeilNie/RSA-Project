@@ -65,7 +65,8 @@
                 @"sender_name": [self.currentUser objectForKey:@"username"],
                 @"receiver": [[self.users objectAtIndex:indexPath.row] objectForKey:@"UUID"],
                 @"receiver_name": [[self.users objectAtIndex:indexPath.row] objectForKey:@"username"],
-                @"messages": @[]}];
+                @"messages": @[],
+                @"public_key": [self randomPrime]}];
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Success" message:@"Created a new conversation" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -80,6 +81,11 @@
 }
 
 #pragma mark - Private
+
+-(NSString *)randomPrime{
+    
+    return [RSA randomPrime].stringValue;
+}
 
 -(void)loadUserData{
 

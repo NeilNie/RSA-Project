@@ -12,7 +12,7 @@
 @interface RSA : NSObject
 
 //stores and returns public keys
--(NSDictionary *)prepareForEncryption;
++(NSDictionary *)prepareForEncryption;
 
 //encrypt with the other person's public key
 -(NSMutableArray <NSString *> *)encryptString:(NSString *)string withPublicKey:(NSString *)key;
@@ -27,7 +27,6 @@
 
 //@property (nonatomic, strong) BigInteger *publicKey;
 //@property (strong, nonatomic) BigInteger *privateKey;
-@property (strong, nonatomic) NSArray *smallPrimes;
 //@property (strong, nonatomic) BigInteger *n;
 
 @end

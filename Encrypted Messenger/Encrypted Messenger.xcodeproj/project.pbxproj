@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		282DCA301EC33AEB007A2FE1 /* RSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 282DCA2F1EC33AEB007A2FE1 /* RSA.m */; };
+		282DCA641EC33D05007A2FE1 /* BigInteger.m in Sources */ = {isa = PBXBuildFile; fileRef = 282DCA551EC33D05007A2FE1 /* BigInteger.m */; };
+		282DCA691EC33D05007A2FE1 /* tommath.c in Sources */ = {isa = PBXBuildFile; fileRef = 282DCA5B1EC33D05007A2FE1 /* tommath.c */; };
+		282DCA6C1EC34301007A2FE1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 282DCA6B1EC34301007A2FE1 /* Media.xcassets */; };
+		282DCA6E1EC34308007A2FE1 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 282DCA6D1EC34308007A2FE1 /* icon.png */; };
+		282DCA701EC344ED007A2FE1 /* primes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 282DCA6F1EC344ED007A2FE1 /* primes.txt */; };
+		28482A091EC09EEF00B3BA00 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 28482A081EC09EEF00B3BA00 /* user.png */; };
 		286D140B1EBCA0E100602731 /* NewConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 286D140A1EBCA0E100602731 /* NewConversationViewController.m */; };
 		286D140E1EBCABAF00602731 /* ConversationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 286D140D1EBCABAF00602731 /* ConversationTableViewCell.m */; };
 		286D14111EBCABBB00602731 /* MessageBubbleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 286D14101EBCABBB00602731 /* MessageBubbleTableViewCell.m */; };
@@ -78,6 +85,18 @@
 
 /* Begin PBXFileReference section */
 		17A39ACC9F9EBB2130AC9569 /* Pods-Encrypted Messenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Encrypted Messenger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Encrypted Messenger/Pods-Encrypted Messenger.debug.xcconfig"; sourceTree = "<group>"; };
+		282DCA2E1EC33AEB007A2FE1 /* RSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSA.h; path = ../RSA.h; sourceTree = "<group>"; };
+		282DCA2F1EC33AEB007A2FE1 /* RSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSA.m; path = ../RSA.m; sourceTree = "<group>"; };
+		282DCA541EC33D05007A2FE1 /* BigInteger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigInteger.h; sourceTree = "<group>"; };
+		282DCA551EC33D05007A2FE1 /* BigInteger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigInteger.m; sourceTree = "<group>"; };
+		282DCA5B1EC33D05007A2FE1 /* tommath.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tommath.c; sourceTree = "<group>"; };
+		282DCA5C1EC33D05007A2FE1 /* tommath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tommath.h; sourceTree = "<group>"; };
+		282DCA5D1EC33D05007A2FE1 /* tommath_class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tommath_class.h; sourceTree = "<group>"; };
+		282DCA5E1EC33D05007A2FE1 /* tommath_superclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tommath_superclass.h; sourceTree = "<group>"; };
+		282DCA6B1EC34301007A2FE1 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		282DCA6D1EC34308007A2FE1 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		282DCA6F1EC344ED007A2FE1 /* primes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = primes.txt; sourceTree = "<group>"; };
+		28482A081EC09EEF00B3BA00 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		286D14091EBCA0E100602731 /* NewConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewConversationViewController.h; sourceTree = "<group>"; };
 		286D140A1EBCA0E100602731 /* NewConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewConversationViewController.m; sourceTree = "<group>"; };
 		286D140C1EBCABAF00602731 /* ConversationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationTableViewCell.h; sourceTree = "<group>"; };
@@ -213,6 +232,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		282DCA4E1EC33D05007A2FE1 /* RSA */ = {
+			isa = PBXGroup;
+			children = (
+				282DCA6F1EC344ED007A2FE1 /* primes.txt */,
+				282DCA2E1EC33AEB007A2FE1 /* RSA.h */,
+				282DCA2F1EC33AEB007A2FE1 /* RSA.m */,
+				282DCA541EC33D05007A2FE1 /* BigInteger.h */,
+				282DCA551EC33D05007A2FE1 /* BigInteger.m */,
+				282DCA5B1EC33D05007A2FE1 /* tommath.c */,
+				282DCA5C1EC33D05007A2FE1 /* tommath.h */,
+				282DCA5D1EC33D05007A2FE1 /* tommath_class.h */,
+				282DCA5E1EC33D05007A2FE1 /* tommath_superclass.h */,
+			);
+			name = RSA;
+			path = RSA_test;
+			sourceTree = "<group>";
+		};
 		286D14121EBCABC300602731 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +281,7 @@
 		289A4DFC1EB36F6F002804AB /* Encrypted Messenger */ = {
 			isa = PBXGroup;
 			children = (
+				282DCA4E1EC33D05007A2FE1 /* RSA */,
 				289A4E001EB36F6F002804AB /* AppDelegate.h */,
 				289A4E011EB36F6F002804AB /* AppDelegate.m */,
 				286D14121EBCABC300602731 /* Views */,
@@ -252,6 +289,7 @@
 				289C37DC1EBBDD2B00FD8C56 /* MaterialControls */,
 				289C37D71EBBDB7C00FD8C56 /* Media */,
 				289A4E091EB36F6F002804AB /* Assets.xcassets */,
+				282DCA6B1EC34301007A2FE1 /* Media.xcassets */,
 				289A4E061EB36F6F002804AB /* Main.storyboard */,
 				289A4E0B1EB36F6F002804AB /* LaunchScreen.storyboard */,
 				289A4E0E1EB36F6F002804AB /* Info.plist */,
@@ -272,6 +310,8 @@
 		289C37D71EBBDB7C00FD8C56 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				282DCA6D1EC34308007A2FE1 /* icon.png */,
+				28482A081EC09EEF00B3BA00 /* user.png */,
 				289C37DA1EBBDB9D00FD8C56 /* Green Color.png */,
 				289C37D81EBBDB9100FD8C56 /* background.png */,
 				289C37C51EBBDB7100FD8C56 /* textfield bg.png */,
@@ -477,8 +517,12 @@
 			files = (
 				289C37D11EBBDB7100FD8C56 /* place_background_2.jpg in Resources */,
 				289C37D51EBBDB7100FD8C56 /* button_outline.png in Resources */,
+				282DCA701EC344ED007A2FE1 /* primes.txt in Resources */,
+				282DCA6E1EC34308007A2FE1 /* icon.png in Resources */,
 				289C385E1EBC00C200FD8C56 /* GoogleService-Info.plist in Resources */,
+				282DCA6C1EC34301007A2FE1 /* Media.xcassets in Resources */,
 				289C37D91EBBDB9100FD8C56 /* background.png in Resources */,
+				28482A091EC09EEF00B3BA00 /* user.png in Resources */,
 				289C37D21EBBDB7100FD8C56 /* place_background_1.jpg in Resources */,
 				289C37D01EBBDB7100FD8C56 /* button_selected.png in Resources */,
 				289A4E0D1EB36F6F002804AB /* LaunchScreen.storyboard in Resources */,
@@ -582,9 +626,12 @@
 				289C384B1EBBDD2B00FD8C56 /* MDSuggestPopupView.m in Sources */,
 				289C384C1EBBDD2B00FD8C56 /* MDSuggestTableView.m in Sources */,
 				289C38461EBBDD2B00FD8C56 /* MDSlider.m in Sources */,
+				282DCA301EC33AEB007A2FE1 /* RSA.m in Sources */,
 				289C38481EBBDD2B00FD8C56 /* MDSliderThumbView.m in Sources */,
 				289C38431EBBDD2B00FD8C56 /* MDProgress.m in Sources */,
+				282DCA641EC33D05007A2FE1 /* BigInteger.m in Sources */,
 				289C383F1EBBDD2B00FD8C56 /* MDDatePickerDialog.m in Sources */,
+				282DCA691EC33D05007A2FE1 /* tommath.c in Sources */,
 				289C37C41EBBD96C00FD8C56 /* PreferenceViewController.m in Sources */,
 				289C38581EBBDD2B00FD8C56 /* UIColorHelper.m in Sources */,
 				289C38321EBBDD2B00FD8C56 /* AutoResizeTextView.m in Sources */,

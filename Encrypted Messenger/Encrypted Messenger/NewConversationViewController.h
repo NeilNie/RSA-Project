@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RSA.h"
+#import "BigInteger.h"
 
 @import FirebaseDatabase;
 @import FirebaseAuth;

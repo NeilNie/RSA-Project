@@ -14,6 +14,12 @@
 
 @implementation AuthViewController
 
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.password resignFirstResponder];
+    [self.email resignFirstResponder];
+    [self.username resignFirstResponder];
+}
+
 #pragma mark - IBActions
 
 -(IBAction)registerUser:(id)sender{
@@ -22,11 +28,15 @@
         if (error) {
             [self showErrorAlert:error];
         }else{
+            NSDictionary *rsa = [RSA prepareForEncryption];
             NSString *uid = [[[FIRAuth auth] currentUser] uid];
+            
             [[[self.ref child:@"users"] child:uid] setValue:@{@"username": self.username.text,
                                                               @"email": self.email.text,
                                                               @"UUID": uid,
-                                                              @"conversations": [NSMutableArray array]}];
+                                                              @"conversations": [NSMutableArray array],
+                                                              @"public_key": [rsa objectForKey:@"e"],
+                                                              @"n": [rsa objectForKey:@"n"]}];
             [self presentMainView];
         }
     }];

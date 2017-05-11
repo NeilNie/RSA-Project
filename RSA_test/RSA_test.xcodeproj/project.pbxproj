@@ -14,8 +14,8 @@
 		286BFE8C1EB9821500B90500 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 286BFE8A1EB9821500B90500 /* Main.storyboard */; };
 		286BFEAA1EB9827C00B90500 /* BigInteger.m in Sources */ = {isa = PBXBuildFile; fileRef = 286BFEA21EB9827C00B90500 /* BigInteger.m */; };
 		286BFEAB1EB9827C00B90500 /* primes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 286BFEA31EB9827C00B90500 /* primes.txt */; };
-		286BFEAC1EB9827C00B90500 /* RSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 286BFEA51EB9827C00B90500 /* RSA.m */; };
 		286BFEAD1EB9827C00B90500 /* tommath.c in Sources */ = {isa = PBXBuildFile; fileRef = 286BFEA81EB9827C00B90500 /* tommath.c */; };
+		288EF54B1EC3EABF0088F04B /* RSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 288EF54A1EC3EABF0088F04B /* RSA.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,12 +31,12 @@
 		286BFEA11EB9827C00B90500 /* BigInteger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigInteger.h; sourceTree = "<group>"; };
 		286BFEA21EB9827C00B90500 /* BigInteger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigInteger.m; sourceTree = "<group>"; };
 		286BFEA31EB9827C00B90500 /* primes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = primes.txt; sourceTree = "<group>"; };
-		286BFEA41EB9827C00B90500 /* RSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSA.h; sourceTree = "<group>"; };
-		286BFEA51EB9827C00B90500 /* RSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSA.m; sourceTree = "<group>"; };
 		286BFEA61EB9827C00B90500 /* tommath_class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tommath_class.h; sourceTree = "<group>"; };
 		286BFEA71EB9827C00B90500 /* tommath_superclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tommath_superclass.h; sourceTree = "<group>"; };
 		286BFEA81EB9827C00B90500 /* tommath.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tommath.c; sourceTree = "<group>"; };
 		286BFEA91EB9827C00B90500 /* tommath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tommath.h; sourceTree = "<group>"; };
+		288EF5491EC3EABF0088F04B /* RSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSA.h; sourceTree = "<group>"; };
+		288EF54A1EC3EABF0088F04B /* RSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSA.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +69,9 @@
 		286BFE7E1EB9821500B90500 /* RSA_test */ = {
 			isa = PBXGroup;
 			children = (
+				288EF5491EC3EABF0088F04B /* RSA.h */,
+				288EF54A1EC3EABF0088F04B /* RSA.m */,
 				286BFEAE1EB9828600B90500 /* Math */,
-				286BFEA41EB9827C00B90500 /* RSA.h */,
-				286BFEA51EB9827C00B90500 /* RSA.m */,
 				286BFE7F1EB9821500B90500 /* AppDelegate.h */,
 				286BFE801EB9821500B90500 /* AppDelegate.m */,
 				286BFE851EB9821500B90500 /* ViewController.h */,
@@ -178,8 +178,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				288EF54B1EC3EABF0088F04B /* RSA.m in Sources */,
 				286BFE871EB9821500B90500 /* ViewController.m in Sources */,
-				286BFEAC1EB9827C00B90500 /* RSA.m in Sources */,
 				286BFEAD1EB9827C00B90500 /* tommath.c in Sources */,
 				286BFE841EB9821500B90500 /* main.m in Sources */,
 				286BFE811EB9821500B90500 /* AppDelegate.m in Sources */,

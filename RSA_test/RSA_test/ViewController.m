@@ -14,7 +14,8 @@
     [super viewDidLoad];
 
     RSA *rsa = [[RSA alloc] init];
-    [rsa encryptString:@"string" withPublicKey:@"key"];
+    NSLog(@"%@", [rsa encryptString:@"I am a string" withPublicKey:@"key"]);
+    NSLog(@"%@", [rsa stringRepresentation:[rsa encryptString:@"I am a string" withPublicKey:@"key"]]);
     // Do any additional setup after loading the view.
 }
 

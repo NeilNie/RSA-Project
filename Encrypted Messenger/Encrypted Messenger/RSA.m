@@ -21,21 +21,21 @@
     self = [super init];
     if (self) {
 
-        self.smallPrimes = [NSArray arrayWithObjects:@2, @3, @5, @7, @11, @13, @17, @19, @23, @29, @31, @37, @41, @43, @47, @53, @59, @61, @67, @71, @73, @79, @83, @89, @97, @101, nil];
+        
     }
     return self;
 }
 
 #pragma mark - Encrypt/Decrypt string
 
--(NSDictionary *)prepareForEncryption{
++(NSDictionary *)prepareForEncryption{
     
     BigInteger *p = [RSA randomPrime];
     BigInteger *q = [RSA randomPrime];
     BigInteger *n = [p multiply:q];
     BigInteger *phiN = [[p subtract:[[BigInteger alloc] initWithString:@"1"]] multiply:[q subtract:[[BigInteger alloc] initWithString:@"1"]]];
-    BigInteger *e = [self findeWithPhi:phiN];;
-    long long d = [self modInverse:[e.stringValue longLongValue] m:[phiN.stringValue longLongValue]];
+    BigInteger *e = [RSA findeWithPhi:phiN];;
+    long long d = [RSA modInverse:[e.stringValue longLongValue] m:[phiN.stringValue longLongValue]];
     BigInteger *privateKey = [[BigInteger alloc] initWithString:[NSString stringWithFormat:@"%lli", d]];
     
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
@@ -117,7 +117,7 @@
 
 #pragma mark - Private
 //http://www.geeksforgeeks.org/multiplicative-inverse-under-modulo-m/
--(long long) modInverse:(long long)a m:(long long)m{
++(long long) modInverse:(long long)a m:(long long)m{
     
     long m0 = m, t, q;
     long x0 = 0, x1 = 1;
@@ -143,15 +143,16 @@
     return x1;
 }
 
--(BigInteger *)findeWithPhi:(BigInteger *)phi{
++(BigInteger *)findeWithPhi:(BigInteger *)phi{
     
+    NSArray *smallPrimes = [NSArray arrayWithObjects:@2, @3, @5, @7, @11, @13, @17, @19, @23, @29, @31, @37, @41, @43, @47, @53, @59, @61, @67, @71, @73, @79, @83, @89, @97, @101, nil];
     BigInteger *gcd = [[BigInteger alloc] initWithString:@"0"];
-    int index = (int)self.smallPrimes.count - 1;
+    int index = (int)smallPrimes.count - 1;
     while (![gcd.stringValue isEqualToString:@"1"]) {
-        gcd = [phi gcd:[[BigInteger alloc] initWithString:[(NSNumber *)self.smallPrimes[index] stringValue]]];
+        gcd = [phi gcd:[[BigInteger alloc] initWithString:[(NSNumber *)smallPrimes[index] stringValue]]];
         index--;
     }
-    return [[BigInteger alloc] initWithString:[(NSNumber *)self.smallPrimes[index] stringValue]];
+    return [[BigInteger alloc] initWithString:[(NSNumber *)smallPrimes[index] stringValue]];
 }
 
 -(BigInteger *)generateE:(BigInteger *)phiN{

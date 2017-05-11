@@ -17,22 +17,30 @@
 #pragma mark - UITableView Delegate
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     ConversationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"conversationCell" forIndexPath:indexPath];
+    if ([[[self.conversations objectAtIndex:indexPath.row] objectForKey:@"sender"] isEqualToString:[[FIRAuth auth] currentUser].uid]) {
+        cell.title.text = [[self.conversations objectAtIndex:indexPath.row] objectForKey:@"receiver_name"];
+    }else{
+        cell.title.text = [[self.conversations objectAtIndex:indexPath.row] objectForKey:@"sender_name"];
+    }
     return cell;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.conversations.count;
+    return 1;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return self.conversations.count;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self performSegueWithIdentifier:@"conversationsegue" sender:nil];
+    });
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
+    return 60;
 }
 
 #pragma mark - Private
@@ -54,14 +62,11 @@
     
     [[FIRDatabase.database.reference child:@"conversations"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         
-        NSDictionary *conversations = [snapshot value];
+        self.conversationData = [snapshot value];
         for (NSString *string in [self.currentUser objectForKey:@"conversations"]) {
-            if ([[[conversations objectForKey:string] objectForKey:@"sender"] isEqualToString:[[FIRAuth auth] currentUser].uid]) {
-                [self.conversations addObject:[[conversations objectForKey:string] objectForKey:@"receiver_name"]];
-            }else{
-                [self.conversations addObject:[[conversations objectForKey:string] objectForKey:@"sender_name"]];
-            }
+            [self.conversations addObject:[self.conversationData objectForKey:string]];
         }
+        
         [self.tableView reloadData];
         
     } withCancelBlock:^(NSError * _Nonnull error) {
@@ -69,10 +74,16 @@
     }];
 }
 
-- (void)viewDidLoad {
-    
+-(void)viewDidAppear:(BOOL)animated{
     
     [self loadCurrentUser];
+    self.conversations = [NSMutableArray array];
+    self.conversationData = [NSDictionary dictionary];
+    [super viewDidAppear:YES];
+}
+
+- (void)viewDidLoad {
+
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -83,5 +94,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([[segue destinationViewController] isKindOfClass:[ChatViewController class]]) {
+        ChatViewController *vc = [segue destinationViewController];
+        vc.conversation = [self.conversations objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+        vc.conversationID = [[self.currentUser objectForKey:@"conversations"] objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+        vc.user = self.currentUser;
+    }
+}
 
 @end

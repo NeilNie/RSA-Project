@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MDTextField.h"
+#import "RSA.h"
 
 @import FirebaseAuth;
 @import FirebaseDatabase;
