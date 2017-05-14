@@ -20,7 +20,7 @@
 @property (nonatomic, strong) NSString *conversationID;
 @property (nonatomic, strong) NSMutableArray *messages;
 @property (nonatomic, strong) NSDictionary *conversation;
-@property (nonatomic, strong) NSString *receiverID;
+@property (nonatomic, strong) NSDictionary *receiver;
 @property (weak, nonatomic) IBOutlet UINavigationItem *naviBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *textField;

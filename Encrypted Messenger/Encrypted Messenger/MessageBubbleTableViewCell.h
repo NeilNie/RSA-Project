@@ -10,4 +10,6 @@
 
 @interface MessageBubbleTableViewCell : UITableViewCell
 
+@property (nonatomic, weak) IBOutlet UILabel *content;
+
 @end

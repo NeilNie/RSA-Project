@@ -65,8 +65,7 @@
                 @"sender_name": [self.currentUser objectForKey:@"username"],
                 @"receiver": [[self.users objectAtIndex:indexPath.row] objectForKey:@"UUID"],
                 @"receiver_name": [[self.users objectAtIndex:indexPath.row] objectForKey:@"username"],
-                @"messages": @[],
-                @"public_key": [self randomPrime]}];
+                @"messages": @[]}];
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Success" message:@"Created a new conversation" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {

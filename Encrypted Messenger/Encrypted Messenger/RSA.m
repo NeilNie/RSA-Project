@@ -51,10 +51,10 @@
     
 }
 
--(NSMutableArray <NSString *> *)encryptString:(NSString *)string withPublicKey:(NSString *)key{
+-(NSMutableArray <NSString *> *)encryptString:(NSString *)string withPublicKey:(NSString *)key n:(NSString *)nn{
     
     BigInteger *e = [[BigInteger alloc] initWithString:key];
-    BigInteger *n = [[BigInteger alloc] initWithString:[[NSUserDefaults standardUserDefaults] objectForKey:@"n"]];
+    BigInteger *n = [[BigInteger alloc] initWithString:nn];
     
     //m * e mod n
     NSMutableArray *nums = [self intRepresentation:string];
@@ -68,8 +68,18 @@
 }
 
 
--(NSString *)decryptString:(NSString *)string withPrivateKey:(NSString *)key{
-    return nil;
+-(NSString *)decryptString:(NSMutableArray *)strings withKey:(NSString *)key withN:(NSString *)nn{
+    
+    BigInteger *d = [[BigInteger alloc] initWithString:key];
+    BigInteger *n = [[BigInteger alloc] initWithString:nn];
+
+    NSMutableArray *nums = [NSMutableArray array];
+    for (NSString *string in strings) {
+        BigInteger *c = [[BigInteger alloc] initWithString:string];
+        BigInteger *m = [c pow:d andMod:n];
+        [nums addObject:[NSNumber numberWithLongLong:[m.stringValue longLongValue]]];
+    }
+    return [self stringRepresentation:nums];
 }
 
 #pragma mark - Encrypt/Decrypt data
@@ -100,6 +110,26 @@
     return ints;
 }
 
+/*-(NSMutableArray<NSNumber *> *)intRepresentation:(NSString *)string{
+    
+    NSMutableArray *ints = [NSMutableArray array];
+    
+    for (int i = 0; i < string.length; i+=4) {
+        int sum = 0;
+        for (int x = i; x <= i+4; x++) {
+            int n = [self charToInt:[NSString stringWithFormat:@"%c", [string characterAtIndex:x]]];
+            n = n * (8-x-i * 10);
+            sum = sum + n;
+        }
+        if (i==0) {
+            
+        }
+        [ints addObject:[NSNumber numberWithInt:sum]];
+    }
+    return ints;
+}*/
+
+
 -(NSString *)stringRepresentation:(NSMutableArray<NSNumber *> *)nums{
 
     NSString *str = @"";
@@ -113,6 +143,11 @@
         }
     }
     return str;
+}
+
+-(int)charToInt:(NSString *)chr{
+    NSArray *chrs = [@"A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z ! @ # $ % ^ & * ( ) _ + { } | : \" < > ? 1 2 3 4 5 6 7 8 9 0" componentsSeparatedByString:@" "];
+    return (int)[chrs indexOfObject:chr];
 }
 
 #pragma mark - Private
@@ -145,7 +180,7 @@
 
 +(BigInteger *)findeWithPhi:(BigInteger *)phi{
     
-    NSArray *smallPrimes = [NSArray arrayWithObjects:@2, @3, @5, @7, @11, @13, @17, @19, @23, @29, @31, @37, @41, @43, @47, @53, @59, @61, @67, @71, @73, @79, @83, @89, @97, @101, nil];
+    NSArray *smallPrimes = [NSArray arrayWithObjects:@2, @3, @5, @7, @11, @13, @17, @19, @23, @29, @31, @37, nil]; // @41, @43, @47, @53, @59, @61, @67, @71, @73, @79, @83, @89, @97, @101
     BigInteger *gcd = [[BigInteger alloc] initWithString:@"0"];
     int index = (int)smallPrimes.count - 1;
     while (![gcd.stringValue isEqualToString:@"1"]) {

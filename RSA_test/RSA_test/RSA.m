@@ -86,6 +86,42 @@
 -(NSMutableArray<NSNumber *> *)intRepresentation:(NSString *)string{
     
     NSMutableArray *ints = [NSMutableArray array];
+    
+    for (int i = 0; i < string.length; i+=4) {
+        NSString *sum = @"";
+        
+        if (i+4 >= string.length) {
+            for (int x = i; x < string.length; x++) {
+                NSString *n = [self charToInt:[NSString stringWithFormat:@"%c", [string characterAtIndex:x]]];
+                sum = [sum stringByAppendingString:n];
+            }
+        }else{
+            for (int x = i; x <= i+4; x++) {
+                NSString *n = [self charToInt:[NSString stringWithFormat:@"%c", [string characterAtIndex:x]]];
+                sum = [sum stringByAppendingString:n];
+            }
+        }
+        
+        NSMutableString *s = [NSMutableString stringWithString:sum];
+        [s insertString:@"1" atIndex:0];
+        sum = s;
+        [ints addObject:[NSNumber numberWithLongLong:[sum longLongValue]]];
+    }
+    return ints;
+}
+
+-(NSString *)charToInt:(NSString *)chr{
+    NSArray *chrs = [@"A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z ! @ # $ % ^ & * ( ) _ + { } | : \" < > ? 1 2 3 4 5 6 7 8 9 0  " componentsSeparatedByString:@" "];
+    NSMutableString *val = [NSMutableString stringWithFormat:@"%i", (int)[chrs indexOfObject:chr]];
+    if (val.length == 1)
+        [val insertString:@"0" atIndex:0];
+    return val;
+}
+
+
+/*-(NSMutableArray<NSNumber *> *)intRepresentation:(NSString *)string{
+    
+    NSMutableArray *ints = [NSMutableArray array];
     for (int i = 0; i < string.length; i+=4) {
         NSData *m;
         if (i + 4 > string.length)
@@ -98,7 +134,7 @@
         [ints addObject:[NSNumber numberWithInt:bn]];
     }
     return ints;
-}
+}*/
 
 -(NSString *)stringRepresentation:(NSMutableArray<NSNumber *> *)nums{
 

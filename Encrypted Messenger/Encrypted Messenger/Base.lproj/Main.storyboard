@@ -239,13 +239,30 @@
                                 <rect key="frame" x="0.0" y="8" width="375" height="545"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="messagecell" id="A4G-9n-73g">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bubbleCellid" id="A4G-9n-73g" customClass="MessageBubbleTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A4G-9n-73g" id="BVL-Sq-6NW">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VE-0R-fiA">
+                                                    <rect key="frame" x="8" y="8" width="359" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6VE-0R-fiA" firstAttribute="top" secondItem="BVL-Sq-6NW" secondAttribute="topMargin" id="7kQ-sg-5bw"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="6VE-0R-fiA" secondAttribute="bottom" id="FG2-Ug-083"/>
+                                                <constraint firstItem="6VE-0R-fiA" firstAttribute="trailing" secondItem="BVL-Sq-6NW" secondAttribute="trailingMargin" id="Xvg-z2-eAa"/>
+                                                <constraint firstItem="6VE-0R-fiA" firstAttribute="leading" secondItem="BVL-Sq-6NW" secondAttribute="leadingMargin" id="oBo-5Q-zkl"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="content" destination="6VE-0R-fiA" id="6wN-s5-ui8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
