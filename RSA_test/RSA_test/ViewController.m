@@ -14,7 +14,10 @@
     [super viewDidLoad];
 
     RSA *rsa = [[RSA alloc] init];
-    [rsa intRepresentation:@"Hello World!"];
+    
+    NSLog(@"%@", [RSA modInverse:[[BigInteger alloc] initWithString:@"3"] m:[[BigInteger alloc] initWithString:@"11"]]);
+    NSLog(@"%@", [RSA modInverse:[[BigInteger alloc] initWithString:@"10"] m:[[BigInteger alloc] initWithString:@"17"]]);
+    //[rsa ModInverse:3 m:11];
     // Do any additional setup after loading the view.
 }
 

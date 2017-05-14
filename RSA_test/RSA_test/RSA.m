@@ -28,7 +28,7 @@
 
 #pragma mark - Encrypt/Decrypt string
 
--(NSDictionary *)prepareForEncryption{
+/*-(NSDictionary *)prepareForEncryption{
     
     BigInteger *p = [RSA randomPrime];
     BigInteger *q = [RSA randomPrime];
@@ -49,7 +49,7 @@
     return @{@"n": n.stringValue,
              @"e": e.stringValue};
     
-}
+}*/
 
 -(NSMutableArray <NSString *> *)encryptString:(NSString *)string withPublicKey:(NSString *)key{
     
@@ -96,7 +96,7 @@
                 sum = [sum stringByAppendingString:n];
             }
         }else{
-            for (int x = i; x <= i+4; x++) {
+            for (int x = i; x < i+4; x++) {
                 NSString *n = [self charToInt:[NSString stringWithFormat:@"%c", [string characterAtIndex:x]]];
                 sum = [sum stringByAppendingString:n];
             }
@@ -110,54 +110,74 @@
     return ints;
 }
 
+-(NSString *)stringRepresentation:(NSMutableArray<NSString *> *)nums{
+    
+    NSString *str = @"";
+    for (int i = 0; i < nums.count; i++) {
+        NSMutableString *s = [NSMutableString stringWithString:nums[i]];
+        [s replaceCharactersInRange:NSMakeRange(0, 1) withString:@""];
+        for (int x = 0; x < s.length; x=x+2) {
+            int i = [[s substringWithRange:NSMakeRange(x, 2)] intValue];
+            str = [str stringByAppendingString:[self intToChar:i]];
+        }
+    }
+    return str;
+}
+
 -(NSString *)charToInt:(NSString *)chr{
-    NSArray *chrs = [@"A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z ! @ # $ % ^ & * ( ) _ + { } | : \" < > ? 1 2 3 4 5 6 7 8 9 0  " componentsSeparatedByString:@" "];
+    NSArray *chrs = [@"A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 ~ ! @ # $ % ^ & * ( ) _ - = + { } | : \\ \" < > ? ` [ ] ; ' , . / " componentsSeparatedByString:@" "];
     NSMutableString *val = [NSMutableString stringWithFormat:@"%i", (int)[chrs indexOfObject:chr]];
     if (val.length == 1)
         [val insertString:@"0" atIndex:0];
     return val;
 }
 
-
-/*-(NSMutableArray<NSNumber *> *)intRepresentation:(NSString *)string{
-    
-    NSMutableArray *ints = [NSMutableArray array];
-    for (int i = 0; i < string.length; i+=4) {
-        NSData *m;
-        if (i + 4 > string.length)
-            m = [[string substringWithRange:NSMakeRange(i, string.length - i)] dataUsingEncoding:NSUTF8StringEncoding];
-        else
-            m = [[string substringWithRange:NSMakeRange(i, 4)] dataUsingEncoding:NSUTF8StringEncoding];
-        
-        int bn = 0;
-        [m getBytes:&bn length:sizeof(bn)];
-        [ints addObject:[NSNumber numberWithInt:bn]];
-    }
-    return ints;
-}*/
-
--(NSString *)stringRepresentation:(NSMutableArray<NSNumber *> *)nums{
-
-    NSString *str = @"";
-    for (NSString *n in nums) {
-        long long i = n.longLongValue;
-        NSData *d = [NSData dataWithBytes:&i length:sizeof(i)];
-        if ([NSString stringWithUTF8String:d.bytes] == nil) {
-            str = [str stringByAppendingString:@" "];
-        }else{
-            str = [str stringByAppendingString:[NSString stringWithUTF8String:d.bytes]];
-        }
-    }
-    return str;
+-(NSString *)intToChar:(int)index{
+    NSArray *chrs = [@"A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 ~ ! @ # $ % ^ & * ( ) _ - = + { } | : \\ \" < > ? ` [ ] ; ' , . / " componentsSeparatedByString:@" "];
+    return [chrs objectAtIndex:index];
 }
+
+
 
 #pragma mark - Private
 //http://www.geeksforgeeks.org/multiplicative-inverse-under-modulo-m/
--(long long) modInverse:(long long)a m:(long long)m{
++(BigInteger *) modInverse:(BigInteger *)a m:(BigInteger *)m{
+    
+    BigInteger *m0 = [[BigInteger alloc] initWithString:m.stringValue];
+    BigInteger *t = [[BigInteger alloc] init];
+    BigInteger *q = [[BigInteger alloc] init];
+    
+    BigInteger *x0 = [[BigInteger alloc] initWithString:@"0"];
+    BigInteger *x1 = [[BigInteger alloc] initWithString:@"1"];
+    
+    while ([a.stringValue longLongValue] > 1){
+        // q is quotient
+        q = [a divide:m];
+        t = [[BigInteger alloc] initWithString:m.stringValue];
+        
+        // m is remainder now, process same as
+        // Euclid's algo
+        m = [a pow:[[BigInteger alloc] initWithString:@"1"] andMod:m];
+        a = [[BigInteger alloc] initWithString:t.stringValue];
+        
+        t = [[BigInteger alloc] initWithString:x0.stringValue];
+        BigInteger *j = [q multiply:x0];
+        x0 = [x1 subtract:j];
+        x1 = [[BigInteger alloc] initWithString:t.stringValue];
+    }
+    
+    // Make x1 positive
+    if ([x1.stringValue longLongValue] < 0)
+        x1 = [x1 add:m0];
+    
+    return x1;
+}
+
+-(long long) ModInverse:(long long)a m:(long long)m{
     
     long m0 = m, t, q;
     long x0 = 0, x1 = 1;
-
+    
     while (a > 1){
         // q is quotient
         q = a / m;

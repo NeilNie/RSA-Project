@@ -45,6 +45,14 @@
 
 #pragma mark - Private
 
+-(IBAction)logOut:(id)sender{
+    NSError *signOutError;
+    BOOL status = [[FIRAuth auth] signOut:&signOutError];
+    if (!status) {
+        NSLog(@"Error signing out: %@", signOutError);
+    }
+}
+
 -(void)loadCurrentUser{
     
     [[[FIRDatabase.database.reference child:@"users"] child:[[FIRAuth auth] currentUser].uid] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
@@ -63,8 +71,10 @@
     [[FIRDatabase.database.reference child:@"conversations"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         
         self.conversationData = [snapshot value];
-        for (NSString *string in [self.currentUser objectForKey:@"conversations"]) {
-            [self.conversations addObject:[self.conversationData objectForKey:string]];
+        if ([self.currentUser objectForKey:@"conversations"] != nil) {
+            for (NSString *string in [self.currentUser objectForKey:@"conversations"]) {
+                [self.conversations addObject:[self.conversationData objectForKey:string]];
+            }
         }
         
         [self.tableView reloadData];
@@ -83,7 +93,7 @@
 }
 
 - (void)viewDidLoad {
-
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }

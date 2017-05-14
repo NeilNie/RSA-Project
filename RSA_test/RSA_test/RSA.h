@@ -25,9 +25,10 @@
 -(NSMutableArray <NSNumber *>*)intRepresentation:(NSString *)string;
 -(NSString *)stringRepresentation:(NSMutableArray <NSNumber *>*)nums;
 
-//@property (nonatomic, strong) BigInteger *publicKey;
-//@property (strong, nonatomic) BigInteger *privateKey;
++(BigInteger *) modInverse:(BigInteger *)a m:(BigInteger *)m;
+-(long long) ModInverse:(long long)a m:(long long)m;
+
 @property (strong, nonatomic) NSArray *smallPrimes;
-//@property (strong, nonatomic) BigInteger *n;
+
 
 @end
