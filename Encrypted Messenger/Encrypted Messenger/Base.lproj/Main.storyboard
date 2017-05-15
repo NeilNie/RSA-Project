@@ -180,7 +180,7 @@
             </objects>
             <point key="canvasLocation" x="893.60000000000002" y="122.78860569715144"/>
         </scene>
-        <!--UserName-->
+        <!--Bubble Data Source-->
         <scene sceneID="M7X-FI-9I8">
             <objects>
                 <viewController id="Hlf-2L-hYW" customClass="ChatViewController" sceneMemberID="viewController">
@@ -195,8 +195,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fc8-5M-o3r">
                                 <rect key="frame" x="0.0" y="553" width="375" height="50"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qlU-yr-HX1">
-                                        <rect key="frame" x="39" y="8" width="284" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qlU-yr-HX1">
+                                        <rect key="frame" x="39" y="10" width="284" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -225,7 +225,7 @@
                                         <state key="normal" title="&gt;"/>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="bFV-hX-wxW" firstAttribute="top" secondItem="fc8-5M-o3r" secondAttribute="top" constant="8" id="18O-4k-hRh"/>
                                     <constraint firstAttribute="height" constant="50" id="CE1-Ua-309"/>
@@ -233,11 +233,11 @@
                                     <constraint firstItem="qlU-yr-HX1" firstAttribute="leading" secondItem="bFV-hX-wxW" secondAttribute="trailing" constant="1" id="Pp4-zS-7yT"/>
                                     <constraint firstItem="bFV-hX-wxW" firstAttribute="leading" secondItem="fc8-5M-o3r" secondAttribute="leading" constant="8" id="cDM-4e-gB9"/>
                                     <constraint firstAttribute="trailing" secondItem="7kz-m8-JGT" secondAttribute="trailing" constant="8" id="inO-79-yjb"/>
-                                    <constraint firstItem="qlU-yr-HX1" firstAttribute="top" secondItem="fc8-5M-o3r" secondAttribute="top" constant="8" id="mOS-pb-VLG"/>
+                                    <constraint firstItem="qlU-yr-HX1" firstAttribute="top" secondItem="fc8-5M-o3r" secondAttribute="top" constant="10" id="mOS-pb-VLG"/>
                                     <constraint firstItem="7kz-m8-JGT" firstAttribute="top" secondItem="fc8-5M-o3r" secondAttribute="top" constant="8" id="xzr-xG-2oV"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Xw-OX-adb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Xw-OX-adb" customClass="UIBubbleTableView">
                                 <rect key="frame" x="0.0" y="8" width="375" height="545"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -268,8 +268,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="Hlf-2L-hYW" id="Ay0-iH-sFV"/>
-                                    <outlet property="delegate" destination="Hlf-2L-hYW" id="b8t-xb-STM"/>
+                                    <outlet property="bubbleDataSource" destination="Hlf-2L-hYW" id="YEB-UA-xqn"/>
                                 </connections>
                             </tableView>
                         </subviews>

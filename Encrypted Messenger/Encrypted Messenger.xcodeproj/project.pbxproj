@@ -21,7 +21,6 @@
 		289A4E021EB36F6F002804AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 289A4E011EB36F6F002804AB /* AppDelegate.m */; };
 		289A4E051EB36F6F002804AB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289A4E041EB36F6F002804AB /* ViewController.m */; };
 		289A4E081EB36F6F002804AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 289A4E061EB36F6F002804AB /* Main.storyboard */; };
-		289A4E0A1EB36F6F002804AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 289A4E091EB36F6F002804AB /* Assets.xcassets */; };
 		289A4E0D1EB36F6F002804AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 289A4E0B1EB36F6F002804AB /* LaunchScreen.storyboard */; };
 		289C37BE1EBBD95A00FD8C56 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289C37BD1EBBD95A00FD8C56 /* AuthViewController.m */; };
 		289C37C11EBBD96600FD8C56 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289C37C01EBBD96600FD8C56 /* ChatViewController.m */; };
@@ -80,6 +79,22 @@
 		289C385A1EBBDD2B00FD8C56 /* UIView+MDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 289C382F1EBBDD2B00FD8C56 /* UIView+MDExtension.m */; };
 		289C385B1EBBDD2B00FD8C56 /* UIViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 289C38311EBBDD2B00FD8C56 /* UIViewHelper.m */; };
 		289C385E1EBC00C200FD8C56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 289C385D1EBC00C200FD8C56 /* GoogleService-Info.plist */; };
+		28A779FB1EC8FF96002F34A5 /* avatar1.png in Resources */ = {isa = PBXBuildFile; fileRef = 28A779F01EC8FF96002F34A5 /* avatar1.png */; };
+		28A779FC1EC8FF96002F34A5 /* bubbleMine.png in Resources */ = {isa = PBXBuildFile; fileRef = 28A779F11EC8FF96002F34A5 /* bubbleMine.png */; };
+		28A779FD1EC8FF96002F34A5 /* bubbleMine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28A779F21EC8FF96002F34A5 /* bubbleMine@2x.png */; };
+		28A779FE1EC8FF96002F34A5 /* bubbleSomeone.png in Resources */ = {isa = PBXBuildFile; fileRef = 28A779F31EC8FF96002F34A5 /* bubbleSomeone.png */; };
+		28A779FF1EC8FF96002F34A5 /* bubbleSomeone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28A779F41EC8FF96002F34A5 /* bubbleSomeone@2x.png */; };
+		28A77A001EC8FF96002F34A5 /* halloween.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 28A779F51EC8FF96002F34A5 /* halloween.jpg */; };
+		28A77A011EC8FF96002F34A5 /* missingAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 28A779F61EC8FF96002F34A5 /* missingAvatar.png */; };
+		28A77A021EC8FF96002F34A5 /* missingAvatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28A779F71EC8FF96002F34A5 /* missingAvatar@2x.png */; };
+		28A77A031EC8FF96002F34A5 /* typingSomeone.png in Resources */ = {isa = PBXBuildFile; fileRef = 28A779F81EC8FF96002F34A5 /* typingSomeone.png */; };
+		28A77A041EC8FF96002F34A5 /* typingSomeone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28A779F91EC8FF96002F34A5 /* typingSomeone@2x.png */; };
+		28A77A391EC8FF9C002F34A5 /* NSBubbleData.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A77A1B1EC8FF9C002F34A5 /* NSBubbleData.m */; };
+		28A77A3A1EC8FF9C002F34A5 /* UIBubbleHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A77A1D1EC8FF9C002F34A5 /* UIBubbleHeaderTableViewCell.m */; };
+		28A77A3B1EC8FF9C002F34A5 /* UIBubbleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A77A1F1EC8FF9C002F34A5 /* UIBubbleImageView.m */; };
+		28A77A3C1EC8FF9C002F34A5 /* UIBubbleTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A77A211EC8FF9C002F34A5 /* UIBubbleTableView.m */; };
+		28A77A3D1EC8FF9C002F34A5 /* UIBubbleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A77A231EC8FF9C002F34A5 /* UIBubbleTableViewCell.m */; };
+		28A77A3E1EC8FF9C002F34A5 /* UIBubbleTypingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A77A261EC8FF9C002F34A5 /* UIBubbleTypingTableViewCell.m */; };
 		BD4AE64D3EF32728A72F301C /* libPods-Encrypted Messenger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CB7894090C4AD4BCF569E3B /* libPods-Encrypted Messenger.a */; };
 /* End PBXBuildFile section */
 
@@ -110,7 +125,6 @@
 		289A4E031EB36F6F002804AB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		289A4E041EB36F6F002804AB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		289A4E071EB36F6F002804AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		289A4E091EB36F6F002804AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		289A4E0C1EB36F6F002804AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		289A4E0E1EB36F6F002804AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		289C37BC1EBBD95A00FD8C56 /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
@@ -216,6 +230,29 @@
 		289C38301EBBDD2B00FD8C56 /* UIViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewHelper.h; sourceTree = "<group>"; };
 		289C38311EBBDD2B00FD8C56 /* UIViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewHelper.m; sourceTree = "<group>"; };
 		289C385D1EBC00C200FD8C56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		28A779F01EC8FF96002F34A5 /* avatar1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = avatar1.png; path = Images/avatar1.png; sourceTree = "<group>"; };
+		28A779F11EC8FF96002F34A5 /* bubbleMine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bubbleMine.png; path = Images/bubbleMine.png; sourceTree = "<group>"; };
+		28A779F21EC8FF96002F34A5 /* bubbleMine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bubbleMine@2x.png"; path = "Images/bubbleMine@2x.png"; sourceTree = "<group>"; };
+		28A779F31EC8FF96002F34A5 /* bubbleSomeone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bubbleSomeone.png; path = Images/bubbleSomeone.png; sourceTree = "<group>"; };
+		28A779F41EC8FF96002F34A5 /* bubbleSomeone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bubbleSomeone@2x.png"; path = "Images/bubbleSomeone@2x.png"; sourceTree = "<group>"; };
+		28A779F51EC8FF96002F34A5 /* halloween.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = halloween.jpg; path = Images/halloween.jpg; sourceTree = "<group>"; };
+		28A779F61EC8FF96002F34A5 /* missingAvatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = missingAvatar.png; path = Images/missingAvatar.png; sourceTree = "<group>"; };
+		28A779F71EC8FF96002F34A5 /* missingAvatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "missingAvatar@2x.png"; path = "Images/missingAvatar@2x.png"; sourceTree = "<group>"; };
+		28A779F81EC8FF96002F34A5 /* typingSomeone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = typingSomeone.png; path = Images/typingSomeone.png; sourceTree = "<group>"; };
+		28A779F91EC8FF96002F34A5 /* typingSomeone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "typingSomeone@2x.png"; path = "Images/typingSomeone@2x.png"; sourceTree = "<group>"; };
+		28A77A1A1EC8FF9C002F34A5 /* NSBubbleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSBubbleData.h; sourceTree = "<group>"; };
+		28A77A1B1EC8FF9C002F34A5 /* NSBubbleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSBubbleData.m; sourceTree = "<group>"; };
+		28A77A1C1EC8FF9C002F34A5 /* UIBubbleHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBubbleHeaderTableViewCell.h; sourceTree = "<group>"; };
+		28A77A1D1EC8FF9C002F34A5 /* UIBubbleHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBubbleHeaderTableViewCell.m; sourceTree = "<group>"; };
+		28A77A1E1EC8FF9C002F34A5 /* UIBubbleImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBubbleImageView.h; sourceTree = "<group>"; };
+		28A77A1F1EC8FF9C002F34A5 /* UIBubbleImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBubbleImageView.m; sourceTree = "<group>"; };
+		28A77A201EC8FF9C002F34A5 /* UIBubbleTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBubbleTableView.h; sourceTree = "<group>"; };
+		28A77A211EC8FF9C002F34A5 /* UIBubbleTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBubbleTableView.m; sourceTree = "<group>"; };
+		28A77A221EC8FF9C002F34A5 /* UIBubbleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBubbleTableViewCell.h; sourceTree = "<group>"; };
+		28A77A231EC8FF9C002F34A5 /* UIBubbleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBubbleTableViewCell.m; sourceTree = "<group>"; };
+		28A77A241EC8FF9C002F34A5 /* UIBubbleTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBubbleTableViewDataSource.h; sourceTree = "<group>"; };
+		28A77A251EC8FF9C002F34A5 /* UIBubbleTypingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBubbleTypingTableViewCell.h; sourceTree = "<group>"; };
+		28A77A261EC8FF9C002F34A5 /* UIBubbleTypingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBubbleTypingTableViewCell.m; sourceTree = "<group>"; };
 		8CB7894090C4AD4BCF569E3B /* libPods-Encrypted Messenger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Encrypted Messenger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8B4965B933F7367A11B53EE /* Pods-Encrypted Messenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Encrypted Messenger.release.xcconfig"; path = "Pods/Target Support Files/Pods-Encrypted Messenger/Pods-Encrypted Messenger.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -281,17 +318,17 @@
 		289A4DFC1EB36F6F002804AB /* Encrypted Messenger */ = {
 			isa = PBXGroup;
 			children = (
+				28A77A401EC901A4002F34A5 /* UIBubbleView */,
+				28A779FA1EC8FF96002F34A5 /* Media */,
 				282DCA4E1EC33D05007A2FE1 /* RSA */,
-				289A4E001EB36F6F002804AB /* AppDelegate.h */,
-				289A4E011EB36F6F002804AB /* AppDelegate.m */,
 				286D14121EBCABC300602731 /* Views */,
 				289C385C1EBC006500FD8C56 /* ViewControllers */,
 				289C37DC1EBBDD2B00FD8C56 /* MaterialControls */,
 				289C37D71EBBDB7C00FD8C56 /* Media */,
-				289A4E091EB36F6F002804AB /* Assets.xcassets */,
-				282DCA6B1EC34301007A2FE1 /* Media.xcassets */,
 				289A4E061EB36F6F002804AB /* Main.storyboard */,
 				289A4E0B1EB36F6F002804AB /* LaunchScreen.storyboard */,
+				289A4E001EB36F6F002804AB /* AppDelegate.h */,
+				289A4E011EB36F6F002804AB /* AppDelegate.m */,
 				289A4E0E1EB36F6F002804AB /* Info.plist */,
 				289C385D1EBC00C200FD8C56 /* GoogleService-Info.plist */,
 				289A4DFD1EB36F6F002804AB /* Supporting Files */,
@@ -310,6 +347,7 @@
 		289C37D71EBBDB7C00FD8C56 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				282DCA6B1EC34301007A2FE1 /* Media.xcassets */,
 				282DCA6D1EC34308007A2FE1 /* icon.png */,
 				28482A081EC09EEF00B3BA00 /* user.png */,
 				289C37DA1EBBDB9D00FD8C56 /* Green Color.png */,
@@ -436,6 +474,45 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		28A779FA1EC8FF96002F34A5 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				28A779F01EC8FF96002F34A5 /* avatar1.png */,
+				28A779F11EC8FF96002F34A5 /* bubbleMine.png */,
+				28A779F21EC8FF96002F34A5 /* bubbleMine@2x.png */,
+				28A779F31EC8FF96002F34A5 /* bubbleSomeone.png */,
+				28A779F41EC8FF96002F34A5 /* bubbleSomeone@2x.png */,
+				28A779F51EC8FF96002F34A5 /* halloween.jpg */,
+				28A779F61EC8FF96002F34A5 /* missingAvatar.png */,
+				28A779F71EC8FF96002F34A5 /* missingAvatar@2x.png */,
+				28A779F81EC8FF96002F34A5 /* typingSomeone.png */,
+				28A779F91EC8FF96002F34A5 /* typingSomeone@2x.png */,
+			);
+			name = Media;
+			path = "../../../Resources/Github Repository/UIChatBubble/UIBubbleView_Example/UIBubbleView_Example";
+			sourceTree = "<group>";
+		};
+		28A77A401EC901A4002F34A5 /* UIBubbleView */ = {
+			isa = PBXGroup;
+			children = (
+				28A77A1A1EC8FF9C002F34A5 /* NSBubbleData.h */,
+				28A77A1B1EC8FF9C002F34A5 /* NSBubbleData.m */,
+				28A77A1C1EC8FF9C002F34A5 /* UIBubbleHeaderTableViewCell.h */,
+				28A77A1D1EC8FF9C002F34A5 /* UIBubbleHeaderTableViewCell.m */,
+				28A77A1E1EC8FF9C002F34A5 /* UIBubbleImageView.h */,
+				28A77A1F1EC8FF9C002F34A5 /* UIBubbleImageView.m */,
+				28A77A201EC8FF9C002F34A5 /* UIBubbleTableView.h */,
+				28A77A211EC8FF9C002F34A5 /* UIBubbleTableView.m */,
+				28A77A221EC8FF9C002F34A5 /* UIBubbleTableViewCell.h */,
+				28A77A231EC8FF9C002F34A5 /* UIBubbleTableViewCell.m */,
+				28A77A241EC8FF9C002F34A5 /* UIBubbleTableViewDataSource.h */,
+				28A77A251EC8FF9C002F34A5 /* UIBubbleTypingTableViewCell.h */,
+				28A77A261EC8FF9C002F34A5 /* UIBubbleTypingTableViewCell.m */,
+			);
+			name = UIBubbleView;
+			path = UIBubbleView_Example;
+			sourceTree = "<group>";
+		};
 		C14B5DCE9FFACEF5B9743539 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,20 +595,29 @@
 				289C37D11EBBDB7100FD8C56 /* place_background_2.jpg in Resources */,
 				289C37D51EBBDB7100FD8C56 /* button_outline.png in Resources */,
 				282DCA701EC344ED007A2FE1 /* primes.txt in Resources */,
+				28A779FF1EC8FF96002F34A5 /* bubbleSomeone@2x.png in Resources */,
+				28A779FE1EC8FF96002F34A5 /* bubbleSomeone.png in Resources */,
 				282DCA6E1EC34308007A2FE1 /* icon.png in Resources */,
 				289C385E1EBC00C200FD8C56 /* GoogleService-Info.plist in Resources */,
+				28A779FC1EC8FF96002F34A5 /* bubbleMine.png in Resources */,
 				282DCA6C1EC34301007A2FE1 /* Media.xcassets in Resources */,
+				28A77A001EC8FF96002F34A5 /* halloween.jpg in Resources */,
 				289C37D91EBBDB9100FD8C56 /* background.png in Resources */,
 				28482A091EC09EEF00B3BA00 /* user.png in Resources */,
 				289C37D21EBBDB7100FD8C56 /* place_background_1.jpg in Resources */,
+				28A77A031EC8FF96002F34A5 /* typingSomeone.png in Resources */,
 				289C37D01EBBDB7100FD8C56 /* button_selected.png in Resources */,
 				289A4E0D1EB36F6F002804AB /* LaunchScreen.storyboard in Resources */,
 				289C37DB1EBBDB9D00FD8C56 /* Green Color.png in Resources */,
+				28A77A021EC8FF96002F34A5 /* missingAvatar@2x.png in Resources */,
 				289C37CE1EBBDB7100FD8C56 /* textfield bg.png in Resources */,
-				289A4E0A1EB36F6F002804AB /* Assets.xcassets in Resources */,
+				28A779FB1EC8FF96002F34A5 /* avatar1.png in Resources */,
 				289C37D31EBBDB7100FD8C56 /* left_arrow.png in Resources */,
 				289A4E081EB36F6F002804AB /* Main.storyboard in Resources */,
+				28A77A011EC8FF96002F34A5 /* missingAvatar.png in Resources */,
+				28A77A041EC8FF96002F34A5 /* typingSomeone@2x.png in Resources */,
 				289C37D41EBBDB7100FD8C56 /* right_arrow.png in Resources */,
+				28A779FD1EC8FF96002F34A5 /* bubbleMine@2x.png in Resources */,
 				289C37CF1EBBDB7100FD8C56 /* coffee117.jpg in Resources */,
 				289C37D61EBBDB7100FD8C56 /* mask.png in Resources */,
 			);
@@ -594,6 +680,7 @@
 			files = (
 				289C38341EBBDD2B00FD8C56 /* MDBubbleLabel.m in Sources */,
 				289C38441EBBDD2B00FD8C56 /* MDProgressLayer.m in Sources */,
+				28A77A3B1EC8FF9C002F34A5 /* UIBubbleImageView.m in Sources */,
 				289C38491EBBDD2B00FD8C56 /* MDSliderTickMarksView.m in Sources */,
 				289C38381EBBDD2B00FD8C56 /* MDCalendarDateHeader.m in Sources */,
 				289C385A1EBBDD2B00FD8C56 /* UIView+MDExtension.m in Sources */,
@@ -604,23 +691,28 @@
 				289C384D1EBBDD2B00FD8C56 /* MDSwitch.m in Sources */,
 				289C384F1EBBDD2B00FD8C56 /* MDTabBarViewController.m in Sources */,
 				289C38351EBBDD2B00FD8C56 /* MDButton.m in Sources */,
+				28A77A3D1EC8FF9C002F34A5 /* UIBubbleTableViewCell.m in Sources */,
 				289C383D1EBBDD2B00FD8C56 /* MDCollectionViewCell.m in Sources */,
 				289C38541EBBDD2B00FD8C56 /* MDTouchGestureRecognizer.m in Sources */,
 				289C38571EBBDD2B00FD8C56 /* NSDateHelper.m in Sources */,
 				289C37BE1EBBD95A00FD8C56 /* AuthViewController.m in Sources */,
 				289C38451EBBDD2B00FD8C56 /* MDRippleLayer.m in Sources */,
 				286D14111EBCABBB00602731 /* MessageBubbleTableViewCell.m in Sources */,
+				28A77A3C1EC8FF9C002F34A5 /* UIBubbleTableView.m in Sources */,
 				289C383B1EBBDD2B00FD8C56 /* MDCalendarYearSelectorViewCell.m in Sources */,
 				289C384A1EBBDD2B00FD8C56 /* MDSnackbar.m in Sources */,
 				289C385B1EBBDD2B00FD8C56 /* UIViewHelper.m in Sources */,
 				289A4E051EB36F6F002804AB /* ViewController.m in Sources */,
 				289C38531EBBDD2B00FD8C56 /* MDToast.m in Sources */,
+				28A77A391EC8FF9C002F34A5 /* NSBubbleData.m in Sources */,
 				289C38361EBBDD2B00FD8C56 /* MDCalendar.m in Sources */,
 				289C38561EBBDD2B00FD8C56 /* NSDate+MDExtension.m in Sources */,
 				289C37C11EBBD96600FD8C56 /* ChatViewController.m in Sources */,
 				289C38421EBBDD2B00FD8C56 /* MDMathHelper.m in Sources */,
 				289C383E1EBBDD2B00FD8C56 /* MDDatePicker.m in Sources */,
 				289C38591EBBDD2B00FD8C56 /* UIFontHelper.m in Sources */,
+				28A77A3A1EC8FF9C002F34A5 /* UIBubbleHeaderTableViewCell.m in Sources */,
+				28A77A3E1EC8FF9C002F34A5 /* UIBubbleTypingTableViewCell.m in Sources */,
 				289C38551EBBDD2B00FD8C56 /* NSCalendarHelper.m in Sources */,
 				289C38521EBBDD2B00FD8C56 /* MDTimePickerDialog.m in Sources */,
 				289C384B1EBBDD2B00FD8C56 /* MDSuggestPopupView.m in Sources */,

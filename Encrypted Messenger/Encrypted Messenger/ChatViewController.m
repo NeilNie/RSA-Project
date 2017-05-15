@@ -14,11 +14,14 @@
 
 @implementation ChatViewController
 
--(void)textFieldDidBeginEditing:(UITextField *)textField{
-    [UIView animateWithDuration:0.4 animations:^{
-        self.height.constant = 300;
-        [self.view layoutIfNeeded];
-    }];
+#pragma mark - UIBubbleTableViewDataSource implementation
+
+- (NSInteger)rowsForBubbleTable:(UIBubbleTableView *)tableView{
+    return [self.bubbleData count];
+}
+
+- (NSBubbleData *)bubbleTableView:(UIBubbleTableView *)tableView dataForRow:(NSInteger)row{
+    return [self.bubbleData objectAtIndex:row];
 }
 
 #pragma mark - UITableView Delegate
@@ -26,13 +29,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MessageBubbleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"bubbleCellid" forIndexPath:indexPath];
     
-    NSDictionary *dic = [self.messages objectAtIndex:indexPath.row];
-    NSUserDefaults *userdefault = [NSUserDefaults standardUserDefaults];
-    if ([[dic objectForKey:@"sender_id"] isEqualToString:[self.user objectForKey:@"UUID"]]) {
-        cell.content.text = [self.rsa decryptString:[dic objectForKey:@"sender_content"] withKey:[userdefault objectForKey:@"key"] withN:[userdefault objectForKey:@"n"]];
-    }else{
-        cell.content.text = [self.rsa decryptString:[dic objectForKey:@"receiver_content"] withKey:[userdefault objectForKey:@"key"] withN:[userdefault objectForKey:@"n"]];
-    }
+
     return cell;
 }
 
@@ -52,6 +49,20 @@
 
 #pragma mark - Private
 
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [UIView animateWithDuration:0.4 animations:^{
+        self.height.constant = 0;
+        [self.view layoutIfNeeded];
+    }];
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    [UIView animateWithDuration:0.4 animations:^{
+        self.height.constant = 300;
+        [self.view layoutIfNeeded];
+    }];
+}
+
 -(void)loadReceiver:(NSString *)receiverID{
     
     [[[[[FIRDatabase database] reference] child:@"users"] child:receiverID] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
@@ -69,20 +80,42 @@
 
 -(void)loadMessages:(NSMutableArray *)messages{
     
+    self.bubbleData = [NSMutableArray array];
+    
     [[[[FIRDatabase database] reference] child:@"messages"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         
         if (![snapshot.value isKindOfClass:[NSNull class]] ) {
+            
             NSDictionary *dictionary = snapshot.value;
-            NSMutableArray *content = [NSMutableArray array];
+            NSUserDefaults *userdefault = [NSUserDefaults standardUserDefaults];
+            
             for (int i = 0; i < dictionary.allKeys.count; i++) {
+                
                 if ([messages containsObject:[[dictionary allKeys] objectAtIndex:i]]) {
-                    [content addObject:[dictionary objectForKey:[[dictionary allKeys] objectAtIndex:i]]];
+                    
+                    NSDictionary *dic = [dictionary objectForKey:[[dictionary allKeys] objectAtIndex:i]];
+                    [self.messages addObject:dic];
+                    NSDate *date = [[self dateFormatter] dateFromString:[dic objectForKey:@"date"]];
+                    if ([[dic objectForKey:@"sender_id"] isEqualToString:[self.user objectForKey:@"UUID"]]) {
+                        NSString *text = [self.rsa decryptString:[dic objectForKey:@"sender_content"] withKey:[userdefault objectForKey:@"key"] withN:[userdefault objectForKey:@"n"]];
+                        NSBubbleData *bubbleData = [[NSBubbleData alloc] initWithText:text date:date type:BubbleTypeMine];
+                        [self.bubbleData addObject:bubbleData];
+                    }else{
+                        NSString *text = [self.rsa decryptString:[dic objectForKey:@"receiver_content"] withKey:[userdefault objectForKey:@"key"] withN:[userdefault objectForKey:@"n"]];
+                        NSBubbleData *bubbleData = [[NSBubbleData alloc] initWithText:text date:date type:BubbleTypeSomeoneElse];
+                        [self.bubbleData addObject:bubbleData];
+                    }
                 }
             }
-            self.messages = content;
             [self.tableView reloadData];
         }
     }];
+}
+
+-(NSDateFormatter *)dateFormatter{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    return formatter;
 }
 
 -(IBAction)sendMessage:(id)sender{
@@ -96,7 +129,8 @@
                                                       @"sender_id": [self.user objectForKey:@"UUID"],
                                                       @"receiver_id": [self.receiver objectForKey:@"UUID"],
                                                       @"receiver_content": content,
-                                                      @"sender_content": sender_content}];
+                                                      @"sender_content": sender_content,
+                                                      @"date": [[self dateFormatter] stringFromDate:[NSDate date]]}];
     
     [[[[[FIRDatabase database] reference] child:@"conversations"] child:self.conversationID] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         NSMutableArray *ms = [snapshot.value objectForKey:@"messages"];
@@ -123,6 +157,11 @@
     }
     self.rsa = [[RSA alloc] init];
     [self loadConversations];
+    
+    self.bubbleData = [[NSMutableArray alloc] init];
+    self.tableView.snapInterval = 100;
+    self.tableView.showAvatars = NO;
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }

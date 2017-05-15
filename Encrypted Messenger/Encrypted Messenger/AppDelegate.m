@@ -29,7 +29,6 @@
         self.window.rootViewController = Viewcontroller;
         [self.window makeKeyAndVisible];
         
-        
     } else {
         self.window.rootViewController = StartView;
         [self.window makeKeyAndVisible];
