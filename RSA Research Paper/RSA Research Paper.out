@@ -1,0 +1,15 @@
+\BOOKMARK [3][-]{subsubsection.0.0.1}{Abstract}{}% 1
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 2
+\BOOKMARK [1][-]{section.2}{Public-Key Cryptosystems}{}% 3
+\BOOKMARK [1][-]{section.3}{RSA Encryption Algorithm}{}% 4
+\BOOKMARK [2][-]{subsection.3.1}{The Mathematics Behind RSA}{section.3}% 5
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Key generation}{subsection.3.1}% 6
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Key distribution}{subsection.3.1}% 7
+\BOOKMARK [3][-]{subsubsection.3.1.3}{Encryption}{subsection.3.1}% 8
+\BOOKMARK [3][-]{subsubsection.3.1.4}{Decryption}{subsection.3.1}% 9
+\BOOKMARK [2][-]{subsection.3.2}{A Quick Example}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.3}{Why does it work?}{section.3}% 11
+\BOOKMARK [1][-]{section.4}{RSA in practical use}{}% 12
+\BOOKMARK [2][-]{subsection.4.1}{String Encoding \046 Decoding}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.2}{Databases and Multiuser Authentication}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.3}{Working with Prime numbers}{section.4}% 15

@@ -33,7 +33,7 @@
     }
     
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    self.label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width + 30, [UIBubbleHeaderTableViewCell height])];
+    self.label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width + 20, [UIBubbleHeaderTableViewCell height])];
     self.label.text = text;
     self.label.font = [UIFont boldSystemFontOfSize:12];
     self.label.textAlignment = NSTextAlignmentCenter;

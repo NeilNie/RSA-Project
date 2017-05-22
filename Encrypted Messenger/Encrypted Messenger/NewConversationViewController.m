@@ -92,7 +92,9 @@
 
         self.users = [NSMutableArray array];
         for (NSString *string in [[snapshot value] allKeys]) {
-            [self.users addObject:[[snapshot value] objectForKey:string]];
+            if (![string isEqualToString:[self.currentUser objectForKey:@"username"]]) {
+                [self.users addObject:[[snapshot value] objectForKey:string]];
+            }
         }
         [self.tableView reloadData];
 
