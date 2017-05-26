@@ -173,6 +173,7 @@ The encryption of m = 2 is \(c = 2^{7} \mod 33 = 29\)
 The decryption of c = 29 is \(m = 29^{3} \mod 33 = 2\)
 
 \subsection{Why does it work?}
+
 If you are reading this paper, you probably have heard of the P vs. NP problem. Informally speaking, "it asks whether every problem whose solution can be quickly verified by a computer can also be quickly solved by a computer." 
 
 The term "quickly" means the existence of an algorithm that can solve the problem in polynomial time. The time to complete the task varies as the size of the input varies. Problem can be answer in polynomial time are called "P". For some questions, there is no known way to find an answer quickly. But if the information about the answer is provided, then it's possible to verify the answer quickly. The class of questions for which an answer can be verified in polynomial time is called NP, which stands for "nondeterministic polynomial time."\footnote{Referenced from: https://en.wikipedia.org/wiki/P\_versus\_NP\_problem}.
@@ -181,10 +182,28 @@ RSA takes advantages of the P vs. NP problem. It's easy to multiply numbers, but
 
 \section{RSA in practical use}
 
+The major part of this project is to use RSA to create an encrypted messaging app. Theoretical RSA is different from implementations. There are many obstetrical and problems to consider. 
+
 \subsection{String Encoding \&  Decoding}
+
+The second challenge is encoding numbers with strings, vice versa. There are many different kinds of encoding scheme used for RSA. They are generally very simple to compute. One popular encoding is to convert a piece of string to a bit array, then convert it into an integer. By using ASCII \footnote{https://en.wikipedia.org/wiki/ASCII}, character can be converted into integers, then join those numbers together to form the message. 
 
 \subsection{Databases and Multiuser Authentication}
 
+The keys and values from the RSA algorithm has to be encoded and stored as a string in a backend, custom built by the developer or via certain backend service. Specifically, I am using Firebase, by Google as my backend. It's a secure and fast real-time database service. The encoding scheme is already mentioned above. Firebase is a real-time database. The app automatically listen to change in the backend. The app simply needs to have an observer for data change in the data base, and all parties in that conversation will be updated. 
+
+The database also stores the public key for each users. Upon installing the application, it will prompt the user to login or register. When a user registers for the first time, the public keys will be randomly generated. The keys are stored locally (hashed and secure), as well as in the backend. Interestingly, the app send the server HTTPS requests, (Hypertext Transfer Protocol Secure) which is an advanced version of RSA. 
+
 \subsection{Working with Prime numbers}
+
+First, handling large prime numbers, around 1024 bits, can be challenging. There are two ways to gain access to those large primes. There are libraries of prime numbers that developers can reference from. However, this can be unsafe, in that hackers might be able to compromise the database information. The more widely used approach is to generate prime numbers. The standard way to generate big prime numbers is to take a preselected random number of the desired length, apply a Fermat test \footnote{More on Fermat Test: https://en.wikipedia.org/wiki/Fermat\_primality\_test} (best with the base 2 as it can be optimized for speed) and then to apply a certain number of Miller-Rabin tests \footnote{More on Miller-Rabin test https://en.wikipedia.org/wiki/Miller–Rabin\_primality\_test} (depending on the length and the allowed error rate like \(2^{-100}\)) to get a number which is very probably a prime number. 
+
+In order to perform RSA securely, some large integer class needs to be implemented. In C, the max size for unsigned long is 20 digits \footnote{Data from C stand library, <limits.h> https://www.tutorialspoint.com/c\_standard\_library/limits\_h.htm}, which is far from what a secure RSA needs. Since my project is developed in Objective-C, I used the LibTomMath \footnote{From: http://www.libtom.net} library and a simple wrapper. 
+
+\section{Conclusion}
+
+In this project, the basics of RSA are introduced. The mathematics behind the algorithm is also explored. With these knowledge, an iOS encrypted messaging application is developed. While developing the app, I encountered many unexpected challenges, from generating prime numbers to encoding strings. 
+
+It's proven that RSA is one of the most secure public key algorithms ever invented. It powers online banking, messaging and protects Internet privacy. There are many other version of RSA and other public key cryptosystems. They are adapted to specific purposes. In the future, I can further explore the beauty and power of cryptosystems. 
 
 \end{document}

@@ -14,3 +14,4 @@
 \contentsline {subsection}{\numberline {4.1}String Encoding \& Decoding}{5}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Databases and Multiuser Authentication}{5}{subsection.4.2}
 \contentsline {subsection}{\numberline {4.3}Working with Prime numbers}{5}{subsection.4.3}
+\contentsline {section}{\numberline {5}Conclusion}{5}{section.5}
