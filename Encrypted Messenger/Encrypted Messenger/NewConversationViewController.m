@@ -92,7 +92,7 @@
 
         self.users = [NSMutableArray array];
         for (NSString *string in [[snapshot value] allKeys]) {
-            if (![string isEqualToString:[self.currentUser objectForKey:@"username"]]) {
+            if (! [string isEqualToString:[self.currentUser objectForKey:@"username"]]) {
                 [self.users addObject:[[snapshot value] objectForKey:string]];
             }
         }

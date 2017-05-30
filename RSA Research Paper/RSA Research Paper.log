@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  25 MAY 2017 21:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  29 MAY 2017 17:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1064,31 +1064,37 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<images/time_complex.png, id=98, 643.40375pt x 643.40375pt>
+<images/time_complex.png, id=107, 643.40375pt x 643.40375pt>
 File: images/time_complex.png Graphic file (type png)
 
 <use images/time_complex.png>
-Package pdftex.def Info: images/time_complex.png used on input line 94.
+Package pdftex.def Info: images/time_complex.png used on input line 97.
 (pdftex.def)             Requested size: 128.67847pt x 128.67847pt.
- [2 <./images/time_complex.png>] [3] [4]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 209.
- [5]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 209.
+ [2] [3 <./images/time_complex.png>] [4] [5]
+<images/screen_shot.png, id=162, 1907.125pt x 1304.875pt>
+File: images/screen_shot.png Graphic file (type png)
+
+<use images/screen_shot.png>
+Package pdftex.def Info: images/screen_shot.png used on input line 208.
+(pdftex.def)             Requested size: 286.05641pt x 195.72281pt.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 214.
+ [6 <./images/screen_shot.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 214.
 
 (./RSA Research Paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 209.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 209.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 214.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 214.
 Package rerunfilecheck Info: File `"RSA Research Paper".out' has not changed.
 (rerunfilecheck)             Checksum: 548F4A9467C1BBCDF0D410A796505C7C;1056.
  ) 
 Here is how much of TeX's memory you used:
- 13865 strings out of 493014
- 206995 string characters out of 6133351
- 460102 words of memory out of 5000000
- 17051 multiletter control sequences out of 15000+600000
- 50022 words of font info for 87 fonts, out of 8000000 for 9000
+ 13873 strings out of 493014
+ 207147 string characters out of 6133351
+ 461102 words of memory out of 5000000
+ 17055 multiletter control sequences out of 15000+600000
+ 49939 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 53i,8n,92p,968b,397s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,8n,92p,1113b,397s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/lo
 cal/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texliv
 e/2016/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/local/texlive/2016/texmf-d
@@ -1103,10 +1109,10 @@ ts/type1/public/lm/lmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pub
 lic/lm/lmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmri1
 0.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></us
 r/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on "RSA Research Paper.pdf" (5 pages, 387474 bytes).
+Output written on "RSA Research Paper.pdf" (6 pages, 711562 bytes).
 PDF statistics:
- 213 PDF objects out of 1000 (max. 8388607)
- 189 compressed objects within 2 object streams
- 41 named destinations out of 1000 (max. 500000)
- 8326 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 229 PDF objects out of 1000 (max. 8388607)
+ 201 compressed objects within 3 object streams
+ 46 named destinations out of 1000 (max. 500000)
+ 8331 words of extra memory for PDF output out of 10000 (max. 10000000)
 

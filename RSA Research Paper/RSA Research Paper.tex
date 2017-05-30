@@ -75,14 +75,17 @@ anchorcolor = blue]{hyperref}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Abstract}
-From online payment to check our email, RSA is the most widely used Public-Key cryptosystems in the world. It takes advantages of the P vs. NP problem (the difficult prime factorizing problem) in order to encrypt data. First discovered by Rivest, Shamir and Adleman in 1977, the algorithm has never been compromised, which is also why RSA is one of the most copied software in the world. In the spring of 2017, I developed an iOS application that uses RSA to send encrypted messages. 
+From online payment to checking our email, RSA is the most widely used Public-Key Cryptosystems in the world \footnote{From TutorialsPoint: https://goo.gl/HY3bkc }. It takes advantages of the P vs. NP problem (the difficult prime factorizing problem) in order to encrypt data. First discovered by Rivest, Shamir and Adleman in 1977, the algorithm is almost impossible to compromise, and is also why RSA is one of the most copied software in the world \footnote{Khan Academy, Computer Science and Encryption}. In the spring of 2017, I developed an iOS application that uses RSA to send encrypted messages. 
 
 \section{Introduction}
-Encryption is a way to conceal a message which can only be opened by using a unique key. Encryption is the about reversing the encryption process with that unique key. Imagine that Bob wants to send Alice an encrypted message, somehow, they have to share the same key to decrypt the message. However, exchanging a synchronized key is very difficult. Prior to the 1970s, encryption relied on algorithms such as the Diffie–Hellman key exchange \footnote{https://en.wikipedia.org/wiki/Diffie–Hellman\_key\_exchange}. In 1977, Rivest, Shamir and Adleman discovered RSA, a Public-Key Cryptosystem, which is safer and much more friendly than the traditional methods. \footnote{Please refer to: https://www.khanacademy.org/computing/computer-science/cryptography/modern-crypt/v/} Until today, RSA is till the most widely used encryption scheme in computer science. 
+Encryption is a way to conceal a message which can only be opened by using a unique key. Decryption is the about reversing the encryption process with that unique key. Imagine that Bob wants to send Alice an encrypted message, somehow, they have to share the same key to decrypt the message. However, exchanging a synchronized key is very difficult. Prior to the 1970s, encryption relied on algorithms such as the Diffie–Hellman key exchange \footnote{https://en.wikipedia.org/wiki/Diffie–Hellman\_key\_exchange}. In 1977, Rivest, Shamir and Adleman discovered RSA, a Public-Key Cryptosystem, which is safer and much more friendly than the traditional methods. \footnote{Please refer to https://www.khanacademy.org/computing/computer-science/cryptography/modern-crypt/v/} Key exchanges are not required, RSA is much harder to compromise, and the algorithm allows the user to send digital signatures \footnote{For more on RSA digital signatures: The original RSA paper}. Until today, RSA is one of the most widely used encryption schemes in computer science. 
 
 \section{Public-Key Cryptosystems}
 
-Public-Key encryption, also known as asymmetric encryption, is any cryptographic system that uses pairs of keys: public keys which may be disseminated widely, and private keys which are known only to the owner. \footnote{https://en.wikipedia.org/wiki/Public-key\_cryptography} In this system, a user an encrypt a message with receiver's public key, and only the receiver can decrypt with message with his private key. 
+Public-Key encryption, also known as asymmetric encryption, is any cryptographic system that uses pairs of keys: public keys which may be disseminated widely, and private keys which are known only to the owner. \footnote{https://en.wikipedia.org/wiki/Public-key\_cryptography} In this system, a user can encrypt a message with receiver's public key, and only the receiver can decrypt with message with his/her private key. 
+
+In this system, no key exchange is necessary. If a hacker intercepts a message, the person needs to decipher the content using private key, which is kept in secret. Brute force is not an effective method to hack RSA, in that finding the prime factors of a large integer can take light-years \footnote{Time complexity of prime factorization: https://en.wikipedia.org/wiki/Integer\_factorization}.  
+
 \section{RSA Encryption Algorithm}
 RSA is an algorithm used by modern computers to encrypt and decrypt messages. It is an asymmetric cryptographic algorithm. Asymmetric means that there are two different keys. This is also called public key cryptography, because one of them can be given to everyone. The other key must be kept private. It is based on the fact that finding the factors of an integer is hard (the factoring problem). RSA stands for Ron Rivest, Adi Shamir and Leonard Adleman, who first publicly described it in 1978. A user of RSA creates and then publishes the product of two large prime numbers, along with an auxiliary value, as their public key. The prime factors must be kept secret. Anyone can use the public key to encrypt a message, but with currently published methods, if the public key is large enough, only someone with knowledge of the prime factors can feasibly decode the message.[1]
 
@@ -202,8 +205,10 @@ In order to perform RSA securely, some large integer class needs to be implement
 
 \section{Conclusion}
 
+\centerline{ \includegraphics[scale=0.15]{screen_shot}}
+
 In this project, the basics of RSA are introduced. The mathematics behind the algorithm is also explored. With these knowledge, an iOS encrypted messaging application is developed. While developing the app, I encountered many unexpected challenges, from generating prime numbers to encoding strings. 
 
-It's proven that RSA is one of the most secure public key algorithms ever invented. It powers online banking, messaging and protects Internet privacy. There are many other version of RSA and other public key cryptosystems. They are adapted to specific purposes. In the future, I can further explore the beauty and power of cryptosystems. 
+It's proven that RSA is one of the most secure public key algorithms ever invented. It powers online banking, messaging and protects Internet privacy. There are many other version of RSA and other public key Cryptosystems. They are adapted to specific purposes. In the future, I can further explore the beauty and power of Cryptosystems. 
 
 \end{document}

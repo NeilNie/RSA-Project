@@ -82,6 +82,7 @@
     
     self.bubbleData = [NSMutableArray array];
     
+    //add an observer to the message data change. (The power of a real time database.)
     [[[[FIRDatabase database] reference] child:@"messages"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         
         if (![snapshot.value isKindOfClass:[NSNull class]] ) {
@@ -96,6 +97,8 @@
                     NSDictionary *dic = [dictionary objectForKey:[[dictionary allKeys] objectAtIndex:i]];
                     [self.messages addObject:dic];
                     NSDate *date = [[self dateFormatter] dateFromString:[dic objectForKey:@"date"]];
+                    
+                    //find out who is the sender.
                     if ([[dic objectForKey:@"sender_id"] isEqualToString:[self.user objectForKey:@"UUID"]]) {
                         NSString *text = [self.rsa decryptString:[dic objectForKey:@"sender_content"] withKey:[userdefault objectForKey:@"key"] withN:[userdefault objectForKey:@"n"]];
                         NSBubbleData *bubbleData = [[NSBubbleData alloc] initWithText:text date:date type:BubbleTypeMine];
@@ -120,10 +123,13 @@
 
 -(IBAction)sendMessage:(id)sender{
     
+    //encrypt content with RSA. Two copies, one for the sender one for the reciever.
     NSMutableArray *content = [self.rsa encryptString:self.textField.text withPublicKey:[self.receiver objectForKey:@"public_key"] n:[self.receiver objectForKey:@"n"]];
     NSMutableArray *sender_content = [self.rsa encryptString:self.textField.text withPublicKey:[self.user objectForKey:@"public_key"] n:[self.user objectForKey:@"n"]];
     
     NSString *messageID = [[NSUUID UUID] UUIDString];
+    
+    //create and store the message.
     [[[[[FIRDatabase database] reference]
        child:@"messages"] child:messageID] setValue:@{@"message_id": messageID,
                                                       @"sender_id": [self.user objectForKey:@"UUID"],
@@ -132,6 +138,7 @@
                                                       @"sender_content": sender_content,
                                                       @"date": [[self dateFormatter] stringFromDate:[NSDate date]]}];
     
+    //update the conversation by adding the new message ID.
     [[[[[FIRDatabase database] reference] child:@"conversations"] child:self.conversationID] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         NSMutableArray *ms = [snapshot.value objectForKey:@"messages"];
         if (!ms) {

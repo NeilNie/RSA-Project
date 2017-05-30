@@ -71,6 +71,8 @@
     [[FIRDatabase.database.reference child:@"conversations"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         
         self.conversationData = [snapshot value];
+        
+        //find conversation matching the current user's convesation keys.
         if ([self.currentUser objectForKey:@"conversations"] != nil) {
             for (NSString *string in [self.currentUser objectForKey:@"conversations"]) {
                 [self.conversations addObject:[self.conversationData objectForKey:string]];
@@ -86,6 +88,7 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     
+    //when view appears, load the current user and all conversations.
     [self loadCurrentUser];
     self.conversations = [NSMutableArray array];
     self.conversationData = [NSDictionary dictionary];

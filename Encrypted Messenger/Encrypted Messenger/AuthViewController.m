@@ -15,6 +15,8 @@
 @implementation AuthViewController
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    //dismiss keyboard when tapped on view.
     [self.password resignFirstResponder];
     [self.email resignFirstResponder];
     [self.username resignFirstResponder];
@@ -31,12 +33,14 @@
             NSDictionary *rsa = [RSA prepareForEncryption];
             NSString *uid = [[[FIRAuth auth] currentUser] uid];
             
+            //store a new user with username, email UUID, conversation, public key and n.
             [[[self.ref child:@"users"] child:uid] setValue:@{@"username": self.username.text,
                                                               @"email": self.email.text,
                                                               @"UUID": uid,
                                                               @"conversations": [NSMutableArray array],
                                                               @"public_key": [rsa objectForKey:@"e"],
                                                               @"n": [rsa objectForKey:@"n"]}];
+            //sucessfully register, go to main view
             [self presentMainView];
         }
     }];
@@ -44,6 +48,7 @@
 
 -(IBAction)loginUser:(id)sender{
     
+    //simply login with email and password.
     [[FIRAuth auth] signInWithEmail:self.email.text password:self.password.text completion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
         if (error) {
             [self showErrorAlert:error];

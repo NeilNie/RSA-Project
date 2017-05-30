@@ -19,10 +19,7 @@
 - (instancetype)init
 {
     self = [super init];
-    if (self) {
-
-        
-    }
+    if (self)
     return self;
 }
 
@@ -30,6 +27,7 @@
 
 +(NSDictionary *)prepareForEncryption{
     
+    //compute all neccesary variables
     BigInteger *p = [RSA randomPrime];
     BigInteger *q = [RSA randomPrime];
     BigInteger *n = [p multiply:q];
@@ -38,6 +36,7 @@
     BigInteger *d = [RSA modInverse:e m:phiN];
     BigInteger *privateKey = d;
     
+    //use NSUserDefault to securely store private keys.
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     [ud setObject:p.stringValue forKey:@"p"];
     [ud setObject:q.stringValue forKey:@"q"];
@@ -46,6 +45,7 @@
     [ud setObject:privateKey.stringValue forKey:@"key"];
     [ud synchronize];
     
+    //return value to store in backend.
     return @{@"n": n.stringValue,
              @"e": e.stringValue};
     
@@ -158,37 +158,6 @@
 
 #pragma mark - Private
 //http://www.geeksforgeeks.org/multiplicative-inverse-under-modulo-m/
-
-// Function to find modulo inverse of a
-/*+(BigInteger *)modInverse:(BigInteger *)a m:(BigInteger *)m
-{
-    BigInteger *res = [(BigInteger *)[x pow:[[BigInteger alloc] initWithString:@"1"] andMod:m] add:m];
-    res = [res pow:[[BigInteger alloc] initWithString:@"1"] andMod:m];
-    return res;
-}
-
-// C function for extended Euclidean Algorithm
-+(BigInteger *) gcdExtended:(BigInteger *)a b:(BigInteger *)b x:(BigInteger *)x y:(BigInteger *)y
-{
-    // Base Case
-    if ([a.stringValue isEqualToString:@"0"]){
-        x = [[BigInteger alloc] initWithString:@"0"];
-        y = [[BigInteger alloc] initWithString:@"1"];
-        return b;
-    }
-    
-    BigInteger *x1 = [[BigInteger alloc] init];
-    BigInteger *y1 = [[BigInteger alloc] init];
-    BigInteger *gcd = [self gcdExtended:[b pow:[[BigInteger alloc] initWithString:@"1"] andMod:a] b:a x:x1 y:y1];
-
-    // Update x and y using results of recursive
-    // call
-    BigInteger *p = [[b divide:a] multiply:x1];
-    x = [y1 subtract:p];
-    y = x1;
-    
-    return gcd;
-}*/
 
 +(BigInteger *) modInverse:(BigInteger *)a m:(BigInteger *)m{
     
